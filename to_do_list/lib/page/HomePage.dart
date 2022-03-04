@@ -13,10 +13,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
-        // ignore: avoid_unnecessary_containers
-        body: Container(
-          child: const Text(''),
-        ));
+      // ignore: avoid_unnecessary_containers
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: const [Text('ค้นหา')],
+          ),
+        ),
+      ),
+    );
   }
 }
