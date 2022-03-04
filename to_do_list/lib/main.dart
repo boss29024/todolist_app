@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/page/HomePage.dart';
+import 'package:to_do_list/stack/HomeStack.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeStack(),
+      },
     );
   }
 }
