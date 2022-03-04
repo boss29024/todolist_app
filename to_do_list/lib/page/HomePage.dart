@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/widgets/cardAllSchedule.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -23,8 +24,10 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),
-          child: Column(
-            children: const [Text('')],
+          child: SafeArea(
+            child: Column(
+              children: const [CardAllSchedule()],
+            ),
           ),
         ),
       ),
