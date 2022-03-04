@@ -28,49 +28,44 @@ class CardAllSchedule extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final widthDevice = MediaQuery.of(context).size.width;
     final heightDevice = MediaQuery.of(context).size.height;
-        return InkWell(
-            //onTap: this.onTap,
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              child: Container(
-                height: (heightDevice / 100) * 18,
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+    //final widthDevice = MediaQuery.of(context).size.width;
+
+    return InkWell(
+        //onTap: this.onTap,
+        child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      child: Container(
+        height: (heightDevice / 100) * 18,
+        padding: const EdgeInsets.all(10),
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                  flex: 1,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                          flex: 1,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: (heightDevice / 100) * 1,
-                              ),
-                              SizedBox(
-                                height: (heightDevice / 100) * 3,
-                              ),
-                              SizedBox(
-                                height: (heightDevice / 100) * 3,
-                              ),
-                            ],
-                          )),
-                      Expanded(
-                          flex: 2,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                height: (heightDevice / 100) * 1,
-                              ),
-                            ],
-                          ))
-                    ]),
-              ),
-            ));
-      }}
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: (heightDevice / 100) * 2,
+                          ),
+                          const Icon(Icons.today, size: 30),
+                          SizedBox(
+                            height: (heightDevice / 100) * 5,
+                          ),
+                          const Text('data'),
+                        ],
+                      )
+                    ],
+                  )),
+            ]),
+      ),
+    ));
+  }
+}
