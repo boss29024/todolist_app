@@ -7,23 +7,11 @@ class CardAllSchedule extends StatelessWidget {
     Key? key,
     //this.onChanged,
     //this.onTap,
-    //this.readOnly = false,
-    this.width = 1,
-    this.height = 1,
-    //this.decoration,
-    // this.name,
-    // this.comment,
     this.score = 0,
   }) : super(key: key);
 
   //final Function onChanged;
   //final Function onTap;
-  //final bool readOnly;
-  final double width;
-  final double height;
-  //final InputDecoration decoration;
-  // final String name;
-  // final String comment;
   final int score;
 
   @override
