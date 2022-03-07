@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_search_bar/flutter_search_bar.dart';
 
 import 'package:to_do_list/widgets/cardAllSchedule.dart';
-import 'package:to_do_list/widgets/listWidgets.dart';
+import 'package:to_do_list/widgets/slidableWidgets.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
                 children: [CardAllSchedule(), CardAllSchedule()],
               ),
               Column(
-                children: [ListWidgets()],
+                children: [SlidableWidgets()],
               )
             ],
           ),
