@@ -3,16 +3,20 @@
 import 'package:flutter/material.dart';
 
 class CardAllSchedule extends StatelessWidget {
-   CardAllSchedule({
-    Key? key,
-    //this.onChanged,
-    //this.onTap,
-    this.score = 0,
-  }) : super(key: key);
+  CardAllSchedule(
+      {Key? key,
+      //this.onChanged,
+      //this.onTap,
+      this.headname = '',
+      this.score = 0,
+      this.icon = Icons.access_alarm})
+      : super(key: key);
 
   //final Function onChanged;
   //final Function onTap;
+  final String headname;
   final int score;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,7 @@ class CardAllSchedule extends StatelessWidget {
         borderRadius: BorderRadius.circular(15.0),
       ),
       child: Container(
-        height: (heightDevice / 100) * 15,
+        height: (heightDevice / 100) * 18,
         width: (widthDevice / 100) * 45,
         padding: const EdgeInsets.all(10),
         child: Row(
@@ -41,11 +45,11 @@ class CardAllSchedule extends StatelessWidget {
                       SizedBox(
                         height: (heightDevice / 100) * 2,
                       ),
-                      const Icon(Icons.today, size: 30),
+                      Icon(icon),
                       SizedBox(
-                        height: (heightDevice / 100) * 2,
+                        height: (heightDevice / 100) * 4,
                       ),
-                      const Text('data', style: TextStyle(fontSize: 20)),
+                      Text(headname),
                     ],
                   )),
               Expanded(
