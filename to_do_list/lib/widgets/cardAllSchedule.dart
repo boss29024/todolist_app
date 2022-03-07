@@ -46,24 +46,33 @@ class CardAllSchedule extends StatelessWidget {
             children: [
               Expanded(
                   flex: 1,
-                  child: Row(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: (heightDevice / 100) * 2,
-                          ),
-                          const Icon(Icons.today, size: 30),
-                          SizedBox(
-                            height: (heightDevice / 100) * 5,
-                          ),
-                          const Text('data'),
-                        ],
-                      )
+                      SizedBox(
+                        height: (heightDevice / 100) * 2,
+                      ),
+                      const Icon(Icons.today, size: 30),
+                      SizedBox(
+                        height: (heightDevice / 100) * 5,
+                      ),
+                      const Text('data'),
                     ],
                   )),
+              Expanded(
+                  child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: (heightDevice / 100) * 2,
+                  ),
+                  const Icon(Icons.today, size: 30),
+                  SizedBox(
+                    height: (heightDevice / 100) * 5,
+                  ),
+                  const Text('data'),
+                ],
+              ))
             ]),
       ),
     ));
