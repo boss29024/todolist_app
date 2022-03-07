@@ -30,13 +30,22 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                children: [CardAllSchedule(), CardAllSchedule()],
+                children: [
+                  CardAllSchedule(icon: Icons.today, headname: 'วันนี้'),
+                  CardAllSchedule(
+                      icon: Icons.calendar_month, headname: 'กำหนดเวลา')
+                ],
               ),
               Row(
-                children: [CardAllSchedule(), CardAllSchedule()],
+                children: [
+                  CardAllSchedule(icon: Icons.inbox, headname: 'ทั้งหมด'),
+                  CardAllSchedule(icon: Icons.flag, headname: 'ติดธงอยู่')
+                ],
               ),
               Column(
-                children: [SlidableWidgets()],
+                children: [
+                  SlidableWidgets(),
+                ],
               )
             ],
           ),

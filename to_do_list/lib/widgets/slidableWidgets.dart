@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class SlidableWidgets extends StatefulWidget {
-  SlidableWidgets({Key? key}) : super(key: key);
+  SlidableWidgets({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<SlidableWidgets> createState() => _SlidableWidgetsState();
@@ -11,6 +13,7 @@ class SlidableWidgets extends StatefulWidget {
 void doNothing(BuildContext context) {}
 
 class _SlidableWidgetsState extends State<SlidableWidgets> {
+  late final String listname = '';
   @override
   Widget build(BuildContext context) {
     return Slidable(
@@ -70,7 +73,7 @@ class _SlidableWidgetsState extends State<SlidableWidgets> {
 
       // The child of the Slidable is what the user sees when the
       // component is not dragged.
-      child: const ListTile(title: Text('Slide me')),
+      child: const ListTile(title: Text('เตือนความจำ')),
     );
   }
 }
