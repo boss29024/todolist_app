@@ -17,7 +17,7 @@ class _HomeStackState extends State<HomeStack> {
         WidgetBuilder builder;
         switch (settings.name) {
           case 'homestack/home':
-            builder = (BuildContext _) => const HomePage();
+            builder = (BuildContext _) =>  HomePage();
             break;
           default:
             throw Exception('Invalid route: ${settings.name}');

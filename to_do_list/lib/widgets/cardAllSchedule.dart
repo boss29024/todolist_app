@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class CardAllSchedule extends StatelessWidget {
-  const CardAllSchedule({
+   CardAllSchedule({
     Key? key,
     //this.onChanged,
     //this.onTap,

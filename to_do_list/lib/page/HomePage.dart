@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_search_bar/flutter_search_bar.dart';
 
 import 'package:to_do_list/widgets/cardAllSchedule.dart';
+import 'package:to_do_list/widgets/listWidgets.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({
+  HomePage({
     Key? key,
   }) : super(key: key);
 
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [CardAllSchedule(), CardAllSchedule()],
@@ -34,8 +35,9 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [CardAllSchedule(), CardAllSchedule()],
               ),
-              Text('ลิสต์ของฉัน'),
-              Column(children: [],)
+              Column(
+                children: [ListWidgets()],
+              )
             ],
           ),
         ),
