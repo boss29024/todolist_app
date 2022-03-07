@@ -45,7 +45,9 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(16),
           child: SafeArea(
             child: Column(
-              children: const [CardAllSchedule()],
+              children: const [
+                CardAllSchedule(),
+              ],
             ),
           ),
         ),
