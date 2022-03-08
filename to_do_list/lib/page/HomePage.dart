@@ -75,7 +75,6 @@ class _HomePageState extends State<HomePage> {
                     style: ElevatedButton.styleFrom(primary: Colors.white),
                     onPressed: () {},
                     child: const ListTile(
-                      leading: Icon(Icons.list),
                       title: Text('การเตือน'),
                       enabled: false,
                       trailing: Icon(Icons.arrow_forward_ios),
