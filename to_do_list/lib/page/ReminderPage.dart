@@ -63,7 +63,6 @@ class _ReminderPageState extends State<ReminderPage> {
             style: ElevatedButton.styleFrom(primary: Colors.white),
             onPressed: () {},
             child: const ListTile(
-              leading: Icon(Icons.list),
               title: Text('รายละเอียด'),
               enabled: false,
               trailing: Icon(Icons.arrow_forward_ios),
@@ -76,7 +75,6 @@ class _ReminderPageState extends State<ReminderPage> {
             style: ElevatedButton.styleFrom(primary: Colors.white),
             onPressed: () {},
             child: const ListTile(
-              leading: Icon(Icons.list),
               title: Text('ลิสต์'),
               enabled: false,
               trailing: Icon(Icons.arrow_forward_ios),
