@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_search_bar/flutter_search_bar.dart';
+import 'package:to_do_list/page/ReminderPage.dart';
 
 import 'package:to_do_list/widgets/cardAllSchedule.dart';
-import 'package:to_do_list/widgets/slidableWidgets.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -14,29 +13,40 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 0;
   int _selectedIndex = 0;
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  //final heightDevice = MediaQuery.of(context).size.height;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  _onItemTapped(int index) {
+    setState(
+      () {
+        showModalBottomSheet<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return Container(
+              height: 800,
+              color: Colors.amber,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const Text('Modal BottomSheet'),
+                    ElevatedButton(
+                      child: const Text('Close BottomSheet'),
+                      onPressed: () => Navigator.pop(context),
+                    )
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    // final widthDevice = MediaQuery.of(context).size.width;
-    // final heightDevice = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: const Text('To do list'),
@@ -63,7 +73,12 @@ class _HomePageState extends State<HomePage> {
               ),
               Column(
                 children: [
-                  SlidableWidgets(),
+                  ListTile(
+                    leading: Icon(Icons.list),
+                    title: Text('การเตือน'),
+                    enabled: false,
+                    trailing: Icon(Icons.arrow_forward_ios),
+                  )
                 ],
               ),
             ],
@@ -74,7 +89,8 @@ class _HomePageState extends State<HomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.add_circle),
-            label: 'เตือนความใจใหม่',
+            label: 'เตือนความจำใหม่',
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.addchart_sharp),
