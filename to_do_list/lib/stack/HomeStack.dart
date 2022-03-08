@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/page/HomePage.dart';
+import 'package:to_do_list/page/ReminderPage.dart';
+import 'package:to_do_list/page/formListPage.dart';
 
 class HomeStack extends StatefulWidget {
   const HomeStack({Key? key}) : super(key: key);
@@ -17,7 +19,13 @@ class _HomeStackState extends State<HomeStack> {
         WidgetBuilder builder;
         switch (settings.name) {
           case 'homestack/home':
-            builder = (BuildContext _) =>  HomePage();
+            builder = (BuildContext _) => HomePage();
+            break;
+          case 'homestack/reminder':
+            builder = (BuildContext _) => ReminderPage();
+            break;
+          case 'homestack/formList':
+            builder = (BuildContext _) => FormListPage();
             break;
           default:
             throw Exception('Invalid route: ${settings.name}');
