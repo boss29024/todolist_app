@@ -22,17 +22,18 @@ class _ReminderPageState extends State<ReminderPage> {
           //onTap: this.onTap,
           child: Column(
         children: [
+          Padding(padding: EdgeInsets.all(5)),
           Card(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
             ),
             child: Container(
-              height: (heightDevice / 100) * 18,
-              width: (widthDevice / 100) * 45,
+              height: (heightDevice / 100) * 23,
+              width: widthDevice,
               padding: const EdgeInsets.all(10),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                         flex: 1,
@@ -40,65 +41,45 @@ class _ReminderPageState extends State<ReminderPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             SizedBox(
-                              height: (heightDevice / 100) * 2,
+                              height: (heightDevice / 100) * 1,
                             ),
-                            Icon(Icons.add),
+                            Text('ชื่อเรื่อง'),
                             SizedBox(
                               height: (heightDevice / 100) * 4,
                             ),
-                            const TextField(
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  hintText: 'ชื่อลิสต์'),
+                            Text('โน้ต'),
+                            SizedBox(
+                              height: (heightDevice / 100) * 4,
                             ),
-                            //Text(listName)
                           ],
                         )),
                   ]),
             ),
           ),
-          Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
+          SizedBox(
+            height: (heightDevice / 100) * 1,
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(primary: Colors.white),
+            onPressed: () {},
+            child: const ListTile(
+              leading: Icon(Icons.list),
+              title: Text('รายละเอียด'),
+              enabled: false,
+              trailing: Icon(Icons.arrow_forward_ios),
             ),
-            child: Container(
-              height: (heightDevice / 100) * 18,
-              width: (widthDevice / 100) * 45,
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                        flex: 1,
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Wrap(
-                              direction: Axis.vertical,
-                              spacing: 7,
-                              runSpacing: 10,
-                              children: [
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                                Icon(Icons.add),
-                              ],
-                            )
-                          ],
-                        )),
-                  ]),
+          ),
+          SizedBox(
+            height: (heightDevice / 100) * 1,
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(primary: Colors.white),
+            onPressed: () {},
+            child: const ListTile(
+              leading: Icon(Icons.list),
+              title: Text('ลิสต์'),
+              enabled: false,
+              trailing: Icon(Icons.arrow_forward_ios),
             ),
           )
         ],

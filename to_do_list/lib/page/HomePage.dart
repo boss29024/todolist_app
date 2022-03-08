@@ -19,24 +19,22 @@ class _HomePageState extends State<HomePage> {
   _onItemTapped(int index) {
     setState(
       () {
+        _selectedIndex;
         showModalBottomSheet<void>(
           context: context,
           builder: (BuildContext context) {
             return Container(
-              height: 800,
-              color: Colors.amber,
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    const Text('Modal BottomSheet'),
-                    ElevatedButton(
-                      child: const Text('Close BottomSheet'),
-                      onPressed: () => Navigator.pop(context),
-                    )
-                  ],
-                ),
+              padding: EdgeInsets.all(5),
+              height: 500,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  ElevatedButton(
+                    child: const Text('Close'),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                  ReminderPage(),
+                ],
               ),
             );
           },
@@ -73,11 +71,15 @@ class _HomePageState extends State<HomePage> {
               ),
               Column(
                 children: [
-                  ListTile(
-                    leading: Icon(Icons.list),
-                    title: Text('การเตือน'),
-                    enabled: false,
-                    trailing: Icon(Icons.arrow_forward_ios),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: Colors.white),
+                    onPressed: () {},
+                    child: const ListTile(
+                      leading: Icon(Icons.list),
+                      title: Text('การเตือน'),
+                      enabled: false,
+                      trailing: Icon(Icons.arrow_forward_ios),
+                    ),
                   )
                 ],
               ),
@@ -90,7 +92,6 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.add_circle),
             label: 'เตือนความจำใหม่',
-            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.addchart_sharp),
