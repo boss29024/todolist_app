@@ -13,7 +13,6 @@ class SlidableWidgets extends StatefulWidget {
 void doNothing(BuildContext context) {}
 
 class _SlidableWidgetsState extends State<SlidableWidgets> {
-  late final String listname = '';
   @override
   Widget build(BuildContext context) {
     return Slidable(
