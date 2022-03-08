@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 
-class ListForm extends StatelessWidget {
-  const ListForm({Key? key}) : super(key: key);
+class FormListPage extends StatefulWidget {
+  FormListPage({Key? key, this.listName = '', this.iconList = Icons.add})
+      : super(key: key);
 
+  final String listName;
+  final IconData iconList;
+
+  @override
+  State<FormListPage> createState() => _FormListPageState();
+}
+
+late final String listName;
+late final IconData iconList;
+
+class _FormListPageState extends State<FormListPage> {
   @override
   Widget build(BuildContext context) {
     final heightDevice = MediaQuery.of(context).size.height;
