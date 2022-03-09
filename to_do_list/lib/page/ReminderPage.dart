@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/widgets/detailsBottom.dart';
+// import 'package:to_do_list/page/DetailPage.dart';
 
 class ReminderPage extends StatefulWidget {
   ReminderPage({
     Key? key,
   }) : super(key: key);
-
-  // final String listName;
-  // final IconData iconList;
 
   @override
   State<ReminderPage> createState() => _ReminderPageState();
@@ -18,9 +17,7 @@ class _ReminderPageState extends State<ReminderPage> {
     final heightDevice = MediaQuery.of(context).size.height;
     final widthDevice = MediaQuery.of(context).size.width;
     return Container(
-      child: InkWell(
-          //onTap: this.onTap,
-          child: Column(
+      child: Column(
         children: [
           Padding(padding: EdgeInsets.all(5)),
           Card(
@@ -56,20 +53,13 @@ class _ReminderPageState extends State<ReminderPage> {
                   ]),
             ),
           ),
-          SizedBox(
-            height: (heightDevice / 100) * 1,
+          const Detailsbottom(
+            icon: Icons.today,
+            headname: 'วันที่',
           ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(primary: Colors.white),
-            onPressed: () {},
-            child: const ListTile(
-              title: Text('รายละเอียด'),
-              enabled: false,
-              trailing: Icon(Icons.arrow_forward_ios),
-            ),
-          ),
-          SizedBox(
-            height: (heightDevice / 100) * 1,
+          const Detailsbottom(
+            icon: Icons.access_time,
+            headname: 'เวลา',
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(primary: Colors.white),
@@ -79,9 +69,9 @@ class _ReminderPageState extends State<ReminderPage> {
               enabled: false,
               trailing: Icon(Icons.arrow_forward_ios),
             ),
-          )
+          ),
         ],
-      )),
+      ),
     );
   }
 }
