@@ -27,7 +27,7 @@ class _FormListPageState extends State<FormListPage> {
             ),
             child: Container(
               height: (heightDevice / 100) * 18,
-              width: (widthDevice / 100) * 45,
+              width: widthDevice,
               padding: const EdgeInsets.all(10),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
