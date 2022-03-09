@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 class CardAllSchedule extends StatelessWidget {
   CardAllSchedule(
       {Key? key,
-      //this.onChanged,
-      //this.onTap,
       this.headname = '',
       this.score = 0,
       this.icon = Icons.access_alarm})
@@ -24,47 +22,47 @@ class CardAllSchedule extends StatelessWidget {
     final widthDevice = MediaQuery.of(context).size.width;
 
     return InkWell(
-        //onTap: this.onTap,
+        onTap: () {},
         child: Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      child: Container(
-        height: (heightDevice / 100) * 18,
-        width: (widthDevice / 100) * 45,
-        padding: const EdgeInsets.all(10),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                  flex: 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: (heightDevice / 100) * 2,
-                      ),
-                      Icon(icon),
-                      SizedBox(
-                        height: (heightDevice / 100) * 4,
-                      ),
-                      Text(headname),
-                    ],
-                  )),
-              Expanded(
-                  flex: 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        height: (heightDevice / 100) * 2,
-                      ),
-                      Text('$score', style: const TextStyle(fontSize: 30)),
-                    ],
-                  )),
-            ]),
-      ),
-    ));
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          child: Container(
+            height: (heightDevice / 100) * 18,
+            width: (widthDevice / 100) * 45,
+            padding: const EdgeInsets.all(10),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                      flex: 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: (heightDevice / 100) * 2,
+                          ),
+                          Icon(icon),
+                          SizedBox(
+                            height: (heightDevice / 100) * 4,
+                          ),
+                          Text(headname),
+                        ],
+                      )),
+                  Expanded(
+                      flex: 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          SizedBox(
+                            height: (heightDevice / 100) * 2,
+                          ),
+                          Text('$score', style: const TextStyle(fontSize: 30)),
+                        ],
+                      )),
+                ]),
+          ),
+        ));
   }
 }
