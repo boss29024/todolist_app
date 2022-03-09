@@ -10,7 +10,13 @@ class ListPage extends StatelessWidget {
         title: const Text('ทั้งหมด'),
       ),
       body: Container(
-        child: Column(children: []),
+        child: Column(children: const [
+          ListTile(
+            title: Text('การเตือน'),
+            enabled: false,
+            trailing: Icon(Icons.arrow_forward_ios),
+          ),
+        ]),
       ),
     );
   }
