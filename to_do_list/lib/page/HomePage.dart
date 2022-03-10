@@ -142,15 +142,45 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Row(
                     children: [
-                      CardAllSchedule(icon: Icons.today, headcard: 'วันนี้'),
-                      CardAllSchedule(
-                          icon: Icons.calendar_month, headcard: 'กำหนดเวลา')
+                      InkWell(
+                          child: CardAllSchedule(
+                            icon: Icons.today,
+                            headcard: 'วันนี้',
+                            score: 1,
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/listtoday');
+                          }),
+                      InkWell(
+                        child: CardAllSchedule(
+                          icon: Icons.calendar_month,
+                          headcard: 'กำหนดเวลา',
+                          score: 1,
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/deadline');
+                        },
+                      )
                     ],
                   ),
                   Row(
                     children: [
-                      CardAllSchedule(icon: Icons.inbox, headcard: 'ทั้งหมด'),
-                      CardAllSchedule(icon: Icons.flag, headcard: 'ติดธงอยู่')
+                      InkWell(
+                          onTap: (() {
+                            Navigator.pushNamed(context, '/alllist');
+                          }),
+                          child: CardAllSchedule(
+                            icon: Icons.inbox,
+                            headcard: 'ทั้งหมด',
+                            score: 1,
+                          )),
+                      InkWell(
+                        onTap: (() {
+                          Navigator.pushNamed(context, '/flaglist');
+                        }),
+                        child: CardAllSchedule(
+                            icon: Icons.flag, headcard: 'ติดธงอยู่'),
+                      ),
                     ],
                   ),
                   Container(
