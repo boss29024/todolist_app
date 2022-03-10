@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/page/AllListPage.dart';
 import 'package:to_do_list/widgets/detailBottom.dart';
 // import 'package:to_do_list/page/DetailPage.dart';
 
@@ -63,7 +64,9 @@ class _ReminderPageState extends State<ReminderPage> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(primary: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/allheadlist');
+            },
             child: const ListTile(
               title: Text('ลิสต์'),
               enabled: false,
