@@ -79,10 +79,13 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   bottonIcons = BottonIcons.List;
                   showModalBottomSheet<void>(
+                    shape: const RoundedRectangleBorder(
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(20))),
                     context: context,
                     builder: (BuildContext context) {
                       return Container(
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(16),
                         height: 500,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
