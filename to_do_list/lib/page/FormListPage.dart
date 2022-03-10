@@ -30,25 +30,33 @@ class _FormListPageState extends State<FormListPage> {
               width: widthDevice,
               padding: const EdgeInsets.all(10),
               child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Expanded(
-                        flex: 1,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: (heightDevice / 100) * 2,
-                            ),
-                            const TextField(
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  hintText: 'ชื่อลิสต์'),
-                            ),
-                          ],
-                        )),
+                    TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(), hintText: 'ชื่อลิสต์'),
+                    ),
                   ]),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                  child: const Text('เพิ่ม'),
+                  onPressed: () => Navigator.pop(context),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                InkWell(
+                  child: const Text('ยกเลิก'),
+                  onTap: () => Navigator.pop(context),
+                ),
+              ],
             ),
           ),
         ],

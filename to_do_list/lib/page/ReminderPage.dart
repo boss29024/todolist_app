@@ -70,6 +70,25 @@ class _ReminderPageState extends State<ReminderPage> {
               trailing: Icon(Icons.arrow_forward_ios),
             ),
           ),
+          Container(
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                  child: const Text('เพิ่ม'),
+                  onPressed: () => Navigator.pop(context),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                InkWell(
+                  child: const Text('ยกเลิก'),
+                  onTap: () => Navigator.pop(context),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

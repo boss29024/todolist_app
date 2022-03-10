@@ -41,29 +41,13 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.all(16),
                         height: 600,
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            ReminderPage(),
-                            Container(
-                              alignment: Alignment.center,
-                              padding: const EdgeInsets.all(5),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  ElevatedButton(
-                                    child: const Text('เพิ่ม'),
-                                    onPressed: () => Navigator.pop(context),
-                                  ),
-                                  SizedBox(
-                                    width: (widthDevice / 100) * 55,
-                                  ),
-                                  ElevatedButton(
-                                    child: const Text('ยกเลิก'),
-                                    onPressed: () => Navigator.pop(context),
-                                  ),
-                                ],
-                              ),
+                            const Text(
+                              'เตือนความจำใหม่',
+                              style: TextStyle(fontSize: 24),
                             ),
+                            ReminderPage(),
                           ],
                         ),
                       );
@@ -101,11 +85,12 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.all(5),
                         height: 500,
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
-                            ElevatedButton(
-                                child: const Text('Close'),
-                                onPressed: () => Navigator.pop(context)),
+                            const Text(
+                              'ลิสต์ใหม่',
+                              style: TextStyle(fontSize: 24),
+                            ),
                             FormListPage(),
                           ],
                         ),
