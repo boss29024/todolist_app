@@ -5,14 +5,14 @@ class ListWidget extends StatelessWidget {
       {Key? key,
       this.headTitle = '',
       this.detailTitle = '',
-      this.date = 0,
-      this.time = 0})
+      this.date = '',
+      this.time = ''})
       : super(key: key);
 
   final String headTitle;
   final String detailTitle;
-  final double date;
-  final double time;
+  final String date;
+  final String time;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,10 @@ class ListWidget extends StatelessWidget {
         title: Text(headTitle),
         subtitle: Text(detailTitle),
         children: <Widget>[
-          ListTile(title: Text('วันที่', textScaleFactor: date)),
-          ListTile(title: Text('เวลา', textScaleFactor: time))
+          ListTile(
+            title: Text('วันที่ $date'),
+          ),
+          ListTile(title: Text('เวลา $time'))
         ]);
   }
 }
