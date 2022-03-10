@@ -43,6 +43,8 @@ class Detailbottom extends StatelessWidget {
                   SwitcherButton(
                     value: false,
                     onChange: (value) {},
+                    onColor: Colors.blue,
+                    offColor: Colors.grey,
                   )
                 ],
               )),
