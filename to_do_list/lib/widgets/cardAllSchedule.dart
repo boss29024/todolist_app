@@ -23,7 +23,7 @@ class CardAllSchedule extends StatelessWidget {
 
     return InkWell(
         onTap: () {
-          Navigator.pushNamed(context, '/listpage');
+          Navigator.pushNamed(context, '/listtoday');
         },
         child: Card(
           shape: RoundedRectangleBorder(
