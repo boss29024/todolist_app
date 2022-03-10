@@ -78,7 +78,7 @@ class _ReminderPageState extends State<ReminderPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         const Text(
-                          'เตือนความจำใหม่',
+                          'ลิสต์ทั้งหมด',
                           style: TextStyle(fontSize: 24),
                         ),
                         AllHeadListPage(),
