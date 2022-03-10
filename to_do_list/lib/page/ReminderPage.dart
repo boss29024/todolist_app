@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/widgets/detailsBottom.dart';
+import 'package:to_do_list/widgets/detailBottom.dart';
 // import 'package:to_do_list/page/DetailPage.dart';
 
 class ReminderPage extends StatefulWidget {
@@ -53,11 +53,11 @@ class _ReminderPageState extends State<ReminderPage> {
                   ]),
             ),
           ),
-          const Detailsbottom(
+          const Detailbottom(
             icon: Icons.today,
             headname: 'วันที่',
           ),
-          const Detailsbottom(
+          const Detailbottom(
             icon: Icons.access_time,
             headname: 'เวลา',
           ),
