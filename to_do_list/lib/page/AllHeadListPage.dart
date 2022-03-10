@@ -8,24 +8,24 @@ class AllHeadListPage extends StatefulWidget {
 }
 
 class _AllHeadListPageState extends State<AllHeadListPage> {
+  bool value = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ลิสต์ทั้งหมด'),
+      ),
+      body: ListView(
+        padding: EdgeInsets.all(12),
         children: [
-          const ListTile(
-            title: Text('การเตือน'),
-            enabled: false,
-            trailing: Icon(Icons.arrow_forward_ios),
-          ),
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: ElevatedButton(
-              child: const Text('กลับ'),
-              onPressed: () => Navigator.pop(context),
-            ),
-          )
+          CheckboxListTile(
+              title: Text('การเตือน'),
+              value: value,
+              onChanged: (value) {
+                setState(() {
+                  this.value = value!;
+                });
+              })
         ],
       ),
     );
