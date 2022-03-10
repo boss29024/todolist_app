@@ -12,12 +12,20 @@ class _AllHeadListPageState extends State<AllHeadListPage> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ListTile(
+          const ListTile(
             title: Text('การเตือน'),
             enabled: false,
             trailing: Icon(Icons.arrow_forward_ios),
           ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: ElevatedButton(
+              child: const Text('กลับ'),
+              onPressed: () => Navigator.pop(context),
+            ),
+          )
         ],
       ),
     );
