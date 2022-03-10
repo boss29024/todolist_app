@@ -9,16 +9,20 @@ class ListPage extends StatefulWidget {
 }
 
 class _ListPageState extends State<ListPage> {
-  late final String headBar;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(headBar),
+        title: Text('วันนี้'),
       ),
       body: Container(
           child: Column(
-        children: [ListWidget()],
+        children: [
+          ListWidget(
+            headTitle: 'กินเลี้ยง',
+            detailTitle: 'ร้านชาบู',
+          )
+        ],
       )),
     );
   }
