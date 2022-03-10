@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/page/HomePage.dart';
+import 'package:to_do_list/page/ListPage.dart';
 import 'package:to_do_list/page/ReminderPage.dart';
 import 'package:to_do_list/page/formListPage.dart';
-import 'package:to_do_list/widgets/listPageWidget.dart';
 
 void main() => runApp(const MyApp());
 
