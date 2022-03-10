@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/page/AllListPage.dart';
+import 'package:to_do_list/page/AllHeadListPage.dart';
 import 'package:to_do_list/widgets/detailBottom.dart';
-// import 'package:to_do_list/page/DetailPage.dart';
 
 class ReminderPage extends StatefulWidget {
   ReminderPage({
@@ -65,7 +64,29 @@ class _ReminderPageState extends State<ReminderPage> {
           ElevatedButton(
             style: ElevatedButton.styleFrom(primary: Colors.white),
             onPressed: () {
-              Navigator.pushNamed(context, '/allheadlist');
+              showModalBottomSheet<void>(
+                isScrollControlled: true,
+                shape: const RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(20))),
+                context: context,
+                builder: (BuildContext context) {
+                  return Container(
+                    padding: const EdgeInsets.all(16),
+                    height: 600,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        const Text(
+                          'เตือนความจำใหม่',
+                          style: TextStyle(fontSize: 24),
+                        ),
+                        AllHeadListPage(),
+                      ],
+                    ),
+                  );
+                },
+              );
             },
             child: const ListTile(
               title: Text('ลิสต์'),
