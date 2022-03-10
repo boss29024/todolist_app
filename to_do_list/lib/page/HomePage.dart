@@ -157,29 +157,41 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Row(
                     children: [
-                      CardAllSchedule(icon: Icons.today, headname: 'วันนี้'),
+                      CardAllSchedule(icon: Icons.today, headcard: 'วันนี้'),
                       CardAllSchedule(
-                          icon: Icons.calendar_month, headname: 'กำหนดเวลา')
+                          icon: Icons.calendar_month, headcard: 'กำหนดเวลา')
                     ],
                   ),
                   Row(
                     children: [
-                      CardAllSchedule(icon: Icons.inbox, headname: 'ทั้งหมด'),
-                      CardAllSchedule(icon: Icons.flag, headname: 'ติดธงอยู่')
+                      CardAllSchedule(icon: Icons.inbox, headcard: 'ทั้งหมด'),
+                      CardAllSchedule(icon: Icons.flag, headcard: 'ติดธงอยู่')
                     ],
                   ),
-                  Column(
-                    children: [
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: Colors.white),
-                        onPressed: () {},
-                        child: const ListTile(
-                          title: Text('การเตือน'),
-                          enabled: false,
-                          trailing: Icon(Icons.arrow_forward_ios),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'ลิสต์ของฉัน',
+                          style: TextStyle(fontSize: 24),
                         ),
-                      )
-                    ],
+                        SizedBox(height: (heightDevice / 100) * 1),
+                        ElevatedButton(
+                          style:
+                              ElevatedButton.styleFrom(primary: Colors.white),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/listpage');
+                          },
+                          child: const ListTile(
+                            title: Text('การเตือน'),
+                            enabled: false,
+                            trailing: Icon(Icons.arrow_forward_ios),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ],
               ),

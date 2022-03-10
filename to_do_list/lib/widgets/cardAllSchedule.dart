@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 class CardAllSchedule extends StatelessWidget {
   CardAllSchedule(
       {Key? key,
-      this.headname = '',
+      this.headcard = '',
       this.score = 0,
       this.icon = Icons.access_alarm})
       : super(key: key);
 
   //final Function onChanged;
   //final Function onTap;
-  final String headname;
+  final String headcard;
   final int score;
   final IconData icon;
 
@@ -22,7 +22,9 @@ class CardAllSchedule extends StatelessWidget {
     final widthDevice = MediaQuery.of(context).size.width;
 
     return InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(context, '/listpage',arguments: {});
+        },
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
@@ -47,7 +49,7 @@ class CardAllSchedule extends StatelessWidget {
                           SizedBox(
                             height: (heightDevice / 100) * 4,
                           ),
-                          Text(headname),
+                          Text(headcard),
                         ],
                       )),
                   Expanded(
