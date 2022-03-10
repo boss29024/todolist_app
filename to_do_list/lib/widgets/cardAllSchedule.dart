@@ -41,7 +41,7 @@ class CardAllSchedule extends StatelessWidget {
                       SizedBox(
                         height: (heightDevice / 100) * 2,
                       ),
-                      Icon(icon),
+                      Icon(icon, color: Colors.blue),
                       SizedBox(
                         height: (heightDevice / 100) * 4,
                       ),

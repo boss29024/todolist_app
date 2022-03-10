@@ -13,6 +13,7 @@ class _FlagListPageState extends State<FlagListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('ติดธงอยู่'),
+        backgroundColor: Colors.orange,
       ),
       body: Container(
           child: Column(

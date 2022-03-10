@@ -14,6 +14,7 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('กำหนดเวลา'),
+        backgroundColor: Colors.red,
       ),
       body: Container(
           child: Column(

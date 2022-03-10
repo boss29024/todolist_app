@@ -14,6 +14,7 @@ class _AllListPageState extends State<AllListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('ทั้งหมด'),
+        backgroundColor: Colors.green,
       ),
       body: Container(
           child: Column(
