@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/page/AllHeadListPage.dart';
 import 'package:to_do_list/page/AllListPage.dart';
 import 'package:to_do_list/page/DeadlineListPage.dart';
 import 'package:to_do_list/page/FlagListPage.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/deadline': (context) => DeadlineListPage(),
         '/alllist': (context) => AllListPage(),
         '/listpage': (context) => ListPage(),
+        '/allheadlist':(context) => AllHeadListPage(),
       },
     );
   }
