@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:to_do_list/widgets/detailBottom.dart';
+import 'package:to_do_list/widgets/dateTimePick.dart';
+import 'package:to_do_list/widgets/dateTimeCard.dart';
 
 class ReminderPage extends StatefulWidget {
   ReminderPage({
@@ -11,10 +14,20 @@ class ReminderPage extends StatefulWidget {
 }
 
 class _ReminderPageState extends State<ReminderPage> {
+  late DateTime pickedDate;
+  late TimeOfDay time;
+  @override
+  void initState() {
+    super.initState();
+    pickedDate = DateTime.now();
+    time = TimeOfDay.now();
+  }
+
   @override
   Widget build(BuildContext context) {
     final heightDevice = MediaQuery.of(context).size.height;
     final widthDevice = MediaQuery.of(context).size.width;
+
     return Container(
       child: Column(
         children: [
@@ -52,13 +65,14 @@ class _ReminderPageState extends State<ReminderPage> {
                   ]),
             ),
           ),
-          const Detailbottom(
-            icon: Icons.today,
-            headname: 'วันที่',
-          ),
-          const Detailbottom(
-            icon: Icons.access_time,
-            headname: 'เวลา',
+          InkWell(
+              child:
+                  const DateTimeCard(icon: Icons.today, nameDateTime: 'วันที่'),
+              onTap: _pickDate),
+          InkWell(
+            child: const DateTimeCard(
+                icon: Icons.access_time_rounded, nameDateTime: 'เวลา'),
+            onTap: _pickTime,
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(primary: Colors.white),
@@ -93,5 +107,28 @@ class _ReminderPageState extends State<ReminderPage> {
         ],
       ),
     );
+  }
+
+  _pickDate() async {
+    DateTime? date = await showDatePicker(
+        context: context,
+        initialDate: pickedDate,
+        firstDate: DateTime(DateTime.now().year - 5),
+        lastDate: DateTime(DateTime.now().year + 5));
+    if (date != null) {
+      setState(() {
+        pickedDate = date;
+      });
+    }
+  }
+
+  _pickTime() async {
+    TimeOfDay? schedule =
+        await showTimePicker(context: context, initialTime: time);
+    if (schedule != null) {
+      setState(() {
+        time = schedule;
+      });
+    }
   }
 }
