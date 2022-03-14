@@ -7,7 +7,7 @@ class CardAllSchedule extends StatelessWidget {
       {Key? key,
       this.headcard = '',
       this.score = 0,
-      this.icon = Icons.access_alarm})
+      this.icon = Icons.error})
       : super(key: key);
 
   //final Function onChanged;
