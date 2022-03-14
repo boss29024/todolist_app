@@ -1,18 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:to_do_list/page/AllHeadListPage.dart';
 import 'package:to_do_list/page/AllListPage.dart';
 import 'package:to_do_list/page/DeadlineListPage.dart';
 import 'package:to_do_list/page/FlagListPage.dart';
 import 'package:to_do_list/page/HomePage.dart';
 import 'package:to_do_list/page/ListToDayPage.dart';
-import 'package:to_do_list/page/ListPage.dart';
+import 'package:to_do_list/page/MyListPage.dart';
 import 'package:to_do_list/page/ReminderPage.dart';
 import 'package:to_do_list/page/formListPage.dart';
 
-void main() => runApp(const MyApp());
+import 'controllers/todo.controller.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  await GetStorage.init();
+
+  runApp(const App());
+}
+
+class App extends StatefulWidget {
+  const App({Key? key}) : super(key: key);
+
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  final todoController = Get.put(TodoController(), permanent: true);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +48,7 @@ class MyApp extends StatelessWidget {
         '/flaglist': (context) => FlagListPage(),
         '/deadline': (context) => DeadlineListPage(),
         '/alllist': (context) => AllListPage(),
-        '/listpage': (context) => ListPage(),
+        '/mylistpage': (context) => MyListPage(),
         '/allheadlist':(context) => AllHeadListPage(),
       },
     );
