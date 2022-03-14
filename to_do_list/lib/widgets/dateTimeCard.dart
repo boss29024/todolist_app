@@ -20,7 +20,7 @@ class DateTimeCard extends StatelessWidget {
       child: Container(
           padding: EdgeInsets.all(5),
           height: (heightDevice / 100) * 10,
-          width: widthDevice,
+          width: (widthDevice/100)*90,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
