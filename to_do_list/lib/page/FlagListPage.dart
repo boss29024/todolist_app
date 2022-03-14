@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:to_do_list/widgets/listWidget.dart';
+
+import '../controllers/todo.controller.dart';
 
 class FlagListPage extends StatefulWidget {
   FlagListPage({Key? key}) : super(key: key);
@@ -10,16 +14,23 @@ class FlagListPage extends StatefulWidget {
 class _FlagListPageState extends State<FlagListPage> {
   @override
   Widget build(BuildContext context) {
+    TodoController todoController = Get.find();
     return Scaffold(
       appBar: AppBar(
         title: Text('ติดธงอยู่'),
         backgroundColor: Colors.orange,
       ),
       body: Container(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [Text('ไม่มีเตือนความจำ')],
-      )),
+          child: Obx(() => ListView.builder(
+              itemCount: todoController.todos.length,
+              itemBuilder: (_buildContext, index) {
+                return ListWidget(
+                  headTitle: todoController.todos[index].header,
+                  detailTitle: todoController.todos[index].note,
+                  date: todoController.todos[index].date.toString(),
+                  time: todoController.todos[index].time.toString(),
+                );
+              }))),
     );
   }
 }

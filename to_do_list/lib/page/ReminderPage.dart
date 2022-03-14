@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:to_do_list/models/todo.dart';
 import 'package:to_do_list/widgets/dateTimePick.dart';
-import 'package:to_do_list/widgets/dateTimeCard.dart';
+import 'package:to_do_list/widgets/AllTextCard.dart';
 
 import '../controllers/todo.controller.dart';
 
@@ -84,7 +84,7 @@ class _ReminderPageState extends State<ReminderPage> {
           InkWell(
               child: Row(
                 children: [
-                  DateTimeCard(
+                  AllTextCard(
                       icon: Icons.today,
                       nameDateTime:
                           'วันที่ ${date.day} / ${date.month} / ${date.year}'),
@@ -94,7 +94,7 @@ class _ReminderPageState extends State<ReminderPage> {
           InkWell(
             child: Row(
               children: [
-                DateTimeCard(
+                AllTextCard(
                     icon: Icons.access_time_rounded,
                     nameDateTime: 'เวลา ${time.hour} นาที ${time.minute}'),
               ],
