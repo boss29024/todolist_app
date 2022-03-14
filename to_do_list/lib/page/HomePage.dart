@@ -79,6 +79,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   bottonIcons = BottonIcons.List;
                   showModalBottomSheet<void>(
+                    isScrollControlled: true,
                     shape: const RoundedRectangleBorder(
                         borderRadius:
                             BorderRadius.vertical(top: Radius.circular(20))),
@@ -199,7 +200,7 @@ class _HomePageState extends State<HomePage> {
                           style:
                               ElevatedButton.styleFrom(primary: Colors.white),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/listpage');
+                            Navigator.pushNamed(context, '/mylistpage');
                           },
                           child: const ListTile(
                             title: Text('การเตือน'),
