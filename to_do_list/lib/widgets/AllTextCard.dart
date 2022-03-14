@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DateTimeCard extends StatelessWidget {
-  const DateTimeCard(
+class AllTextCard extends StatelessWidget {
+  const AllTextCard(
       {Key? key, this.icon = Icons.access_time, this.nameDateTime = ''})
       : super(key: key);
 
