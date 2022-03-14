@@ -1,8 +1,12 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:to_do_list/models/todo.dart';
 import 'package:to_do_list/widgets/dateTimePick.dart';
 import 'package:to_do_list/widgets/dateTimeCard.dart';
+
+import '../controllers/todo.controller.dart';
 
 class ReminderPage extends StatefulWidget {
   ReminderPage({
@@ -14,20 +18,23 @@ class ReminderPage extends StatefulWidget {
 }
 
 class _ReminderPageState extends State<ReminderPage> {
-  late DateTime pickedDate;
-  late TimeOfDay time;
+  late DateTime date;
+  late DateTime time;
+  TextEditingController headerTextController = TextEditingController();
+  TextEditingController noteTextController = TextEditingController();
+
+  TodoController todoController = Get.find();
   @override
   void initState() {
     super.initState();
-    pickedDate = DateTime.now();
-    time = TimeOfDay.now();
+    date = DateTime.now();
+    time = DateTime.now();
   }
 
   @override
   Widget build(BuildContext context) {
     final heightDevice = MediaQuery.of(context).size.height;
     final widthDevice = MediaQuery.of(context).size.width;
-
     return Container(
       child: Column(
         children: [
@@ -37,7 +44,7 @@ class _ReminderPageState extends State<ReminderPage> {
               borderRadius: BorderRadius.circular(15.0),
             ),
             child: Container(
-              height: (heightDevice / 100) * 23,
+              height: (heightDevice / 100) * 35,
               width: widthDevice,
               padding: const EdgeInsets.all(10),
               child: Column(
@@ -49,16 +56,25 @@ class _ReminderPageState extends State<ReminderPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SizedBox(
-                              height: (heightDevice / 100) * 1,
+                            Container(
+                              height: (heightDevice / 100) * 10,
+                              width: widthDevice,
+                              child: TextField(
+                                decoration: const InputDecoration(
+                                  hintText: 'ชื่อเรื่อง',
+                                ),
+                                controller: headerTextController,
+                              ),
                             ),
-                            Text('ชื่อเรื่อง'),
-                            SizedBox(
-                              height: (heightDevice / 100) * 4,
-                            ),
-                            Text('โน้ต'),
-                            SizedBox(
-                              height: (heightDevice / 100) * 4,
+                            Container(
+                              height: (heightDevice / 100) * 10,
+                              width: widthDevice,
+                              child: TextField(
+                                decoration: const InputDecoration(
+                                  hintText: 'โน้ต',
+                                ),
+                                controller: noteTextController,
+                              ),
                             ),
                           ],
                         )),
@@ -66,12 +82,23 @@ class _ReminderPageState extends State<ReminderPage> {
             ),
           ),
           InkWell(
-              child:
-                  const DateTimeCard(icon: Icons.today, nameDateTime: 'วันที่'),
+              child: Row(
+                children: [
+                  DateTimeCard(
+                      icon: Icons.today,
+                      nameDateTime:
+                          'วันที่ ${date.day} / ${date.month} / ${date.year}'),
+                ],
+              ),
               onTap: _pickDate),
           InkWell(
-            child: const DateTimeCard(
-                icon: Icons.access_time_rounded, nameDateTime: 'เวลา'),
+            child: Row(
+              children: [
+                DateTimeCard(
+                    icon: Icons.access_time_rounded,
+                    nameDateTime: 'เวลา ${time.hour} นาที ${time.minute}'),
+              ],
+            ),
             onTap: _pickTime,
           ),
           ElevatedButton(
@@ -92,7 +119,12 @@ class _ReminderPageState extends State<ReminderPage> {
               children: [
                 ElevatedButton(
                   child: const Text('เพิ่ม'),
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () {
+                    Todo todo = Todo(headerTextController.text,
+                        noteTextController.text, '', date, time);
+                    todoController.addTodo(todo);
+                    Navigator.pop(context);
+                  },
                 ),
                 SizedBox(
                   width: 10,
@@ -110,24 +142,28 @@ class _ReminderPageState extends State<ReminderPage> {
   }
 
   _pickDate() async {
-    DateTime? date = await showDatePicker(
+    DateTime? dateNow = await showDatePicker(
         context: context,
-        initialDate: pickedDate,
+        initialDate: date,
         firstDate: DateTime(DateTime.now().year - 5),
         lastDate: DateTime(DateTime.now().year + 5));
-    if (date != null) {
+    if (dateNow != null) {
       setState(() {
-        pickedDate = date;
+        date = dateNow;
       });
     }
   }
 
   _pickTime() async {
-    TimeOfDay? schedule =
-        await showTimePicker(context: context, initialTime: time);
+    TimeOfDay? schedule = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
     if (schedule != null) {
       setState(() {
-        time = schedule;
+        final now = new DateTime.now();
+        time = new DateTime(
+            now.year, now.month, now.day, schedule.hour, schedule.minute);
       });
     }
   }

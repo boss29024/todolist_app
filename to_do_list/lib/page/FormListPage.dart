@@ -13,6 +13,7 @@ class FormListPage extends StatefulWidget {
 }
 
 class _FormListPageState extends State<FormListPage> {
+  TextEditingController listTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final heightDevice = MediaQuery.of(context).size.height;
@@ -36,6 +37,7 @@ class _FormListPageState extends State<FormListPage> {
                     TextField(
                       decoration: InputDecoration(
                           border: OutlineInputBorder(), hintText: 'ชื่อลิสต์'),
+                      controller: listTextController,
                     ),
                   ]),
             ),
