@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do_list/page/FormListPage.dart';
+import 'package:to_do_list/page/MyListPage.dart';
 import 'package:to_do_list/page/ReminderPage.dart';
 // import 'package:to_do_list/page/ReminderPage.dart';
 
@@ -185,32 +186,7 @@ class _HomePageState extends State<HomePage> {
                             icon: Icons.flag, headcard: 'ติดธงอยู่'),
                       ),
                     ],
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'ลิสต์ของฉัน',
-                          style: TextStyle(fontSize: 24),
-                        ),
-                        SizedBox(height: (heightDevice / 100) * 1),
-                        ElevatedButton(
-                          style:
-                              ElevatedButton.styleFrom(primary: Colors.white),
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/mylistpage');
-                          },
-                          child: const ListTile(
-                            title: Text('การเตือน'),
-                            enabled: false,
-                            trailing: Icon(Icons.arrow_forward_ios),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
+                  ),MyListPage()
                 ],
               ),
             ),
