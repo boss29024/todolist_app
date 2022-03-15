@@ -23,7 +23,13 @@ class ListWidget extends StatelessWidget {
           ListTile(
             title: Text('วันที่ $date'),
           ),
-          ListTile(title: Text('เวลา $time'))
+          ListTile(title: Text('เวลา $time')),
+          ListTile(
+            title: ElevatedButton(
+              onPressed: () {},
+              child: Text('ทำเสร็จแล้ว'),
+            ),
+          )
         ]);
   }
 }
