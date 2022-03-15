@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do_list/page/NewListPage.dart';
-import 'package:to_do_list/page/MyListPage.dart';
 import 'package:to_do_list/page/ReminderPage.dart';
-// import 'package:to_do_list/page/ReminderPage.dart';
 
 import 'package:to_do_list/widgets/cardAllSchedule.dart';
 
@@ -75,54 +72,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     )
                   : Icon(Icons.add)),
-          GestureDetector(
-              onTap: () {
-                setState(() {
-                  bottonIcons = BottonIcons.List;
-                  showModalBottomSheet<void>(
-                    isScrollControlled: true,
-                    shape: const RoundedRectangleBorder(
-                        borderRadius:
-                            BorderRadius.vertical(top: Radius.circular(20))),
-                    context: context,
-                    builder: (BuildContext context) {
-                      return Container(
-                        padding: EdgeInsets.all(16),
-                        height: 500,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            const Text(
-                              'ลิสต์ใหม่',
-                              style: TextStyle(fontSize: 24),
-                            ),
-                            NewListPage(),
-                          ],
-                        ),
-                      );
-                    },
-                  );
-                });
-              },
-              child: bottonIcons == BottonIcons.List
-                  ? Container(
-                      padding: const EdgeInsets.only(
-                          left: 16, right: 16, bottom: 8, top: 8),
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.list,
-                            color: Colors.blue,
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text('เพิ่มลิสต์',
-                              style: TextStyle(color: Colors.blue)),
-                        ],
-                      ),
-                    )
-                  : Icon(Icons.list)),
         ]),
       ),
     );
@@ -180,13 +129,13 @@ class _HomePageState extends State<HomePage> {
                           )),
                       InkWell(
                         onTap: (() {
-                          Navigator.pushNamed(context, '/flaglist');
+                          Navigator.pushNamed(context, '/complete');
                         }),
                         child: CardAllSchedule(
-                            icon: Icons.flag, headcard: 'ติดธงอยู่'),
+                            icon: Icons.check, headcard: 'ทำเสร็จแล้ว'),
                       ),
                     ],
-                  ),MyListPage()
+                  ),
                 ],
               ),
             ),

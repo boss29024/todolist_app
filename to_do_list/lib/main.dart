@@ -6,7 +6,6 @@ import 'package:to_do_list/page/AllListPage.dart';
 import 'package:to_do_list/page/DeadlineListPage.dart';
 import 'package:to_do_list/page/CompleteListPage.dart';
 import 'package:to_do_list/page/HomePage.dart';
-import 'package:to_do_list/page/NewListPage.dart';
 import 'package:to_do_list/page/ToDayPage.dart';
 import 'package:to_do_list/page/ReminderPage.dart';
 
@@ -40,7 +39,6 @@ class _AppState extends State<App> {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/newList': (context) => NewListPage(),
         '/reminder': (context) => ReminderPage(),
         '/today': (context) => ToDayPage(),
         '/complete': (context) => CompleteListPage(),
