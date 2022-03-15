@@ -25,7 +25,7 @@ class _MyListPageState extends State<MyListPage> {
           ),
           SizedBox(height: (heightDevice / 100) * 1),
           InkWell(
-            child: AllTextCard(nameDateTime: 'การเตือน'),
+            child: AllTextCard(stringText: 'การเตือน'),
           )
         ],
       ),

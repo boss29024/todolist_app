@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class AllTextCard extends StatelessWidget {
   const AllTextCard(
-      {Key? key, this.icon = Icons.access_time, this.nameDateTime = ''})
+      {Key? key, this.icon = Icons.access_time, this.stringText = ''})
       : super(key: key);
 
   final IconData icon;
-  final String nameDateTime;
+  final String stringText;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class AllTextCard extends StatelessWidget {
                   SizedBox(
                     width: (widthDevice / 100) * 1,
                   ),
-                  Text(nameDateTime),
+                  Text(stringText),
                 ]),
               ),
               Icon(Icons.arrow_drop_down)
