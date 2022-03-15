@@ -11,9 +11,13 @@ class ToDayPage extends StatefulWidget {
 }
 
 class _ToDayPageState extends State<ToDayPage> {
+  final nowDate = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     TodoController todoController = Get.find();
+    final heightDevice = MediaQuery.of(context).size.height;
+    final widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text('วันนี้'),
@@ -22,14 +26,28 @@ class _ToDayPageState extends State<ToDayPage> {
           child: Obx(() => ListView.builder(
               itemCount: todoController.todos.length,
               itemBuilder: (_buildContext, index) {
-                return ListWidget(
-                  headTitle: todoController.todos[index].header,
-                  detailTitle: todoController.todos[index].note,
-                  date:
-                      '${todoController.todos[index].date.day} / ${todoController.todos[index].date.month} / ${todoController.todos[index].date.year}',
-                  time:
-                      '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
-                );
+                if (nowDate.year == todoController.todos[index].date.year &&
+                    nowDate.month == todoController.todos[index].date.month &&
+                    nowDate.day == todoController.todos[index].date.day) {
+                  return ListWidget(
+                    headTitle: todoController.todos[index].header,
+                    detailTitle: todoController.todos[index].note,
+                    date:
+                        '${todoController.todos[index].date.day} / ${todoController.todos[index].date.month} / ${todoController.todos[index].date.year}',
+                    time:
+                        '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
+                  );
+                } else {
+                  return Container(
+                    alignment: Alignment.center,
+                    height: heightDevice,
+                    width: widthDevice,
+                    child: Text(
+                      'ไม่มีเตือนความจำ',
+                      style: TextStyle(fontSize: 24, color: Colors.grey),
+                    ),
+                  );
+                }
               }))),
     );
   }
