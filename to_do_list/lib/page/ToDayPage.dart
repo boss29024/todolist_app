@@ -3,14 +3,14 @@ import 'package:to_do_list/widgets/listWidget.dart';
 import 'package:get/get.dart';
 import '../controllers/todo.controller.dart';
 
-class ListToDayPage extends StatefulWidget {
-  ListToDayPage({Key? key}) : super(key: key);
+class ToDayPage extends StatefulWidget {
+  ToDayPage({Key? key}) : super(key: key);
 
   @override
-  State<ListToDayPage> createState() => _ListToDayPageState();
+  State<ToDayPage> createState() => _ToDayPageState();
 }
 
-class _ListToDayPageState extends State<ListToDayPage> {
+class _ToDayPageState extends State<ToDayPage> {
   @override
   Widget build(BuildContext context) {
     TodoController todoController = Get.find();
@@ -25,8 +25,10 @@ class _ListToDayPageState extends State<ListToDayPage> {
                 return ListWidget(
                   headTitle: todoController.todos[index].header,
                   detailTitle: todoController.todos[index].note,
-                  date: todoController.todos[index].date.toString(),
-                  time: todoController.todos[index].time.toString(),
+                  date:
+                      '${todoController.todos[index].date.day} / ${todoController.todos[index].date.month} / ${todoController.todos[index].date.year}',
+                  time:
+                      '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
                 );
               }))),
     );
