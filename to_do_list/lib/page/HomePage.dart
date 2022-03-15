@@ -153,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                             score: 1,
                           ),
                           onTap: () {
-                            Navigator.pushNamed(context, '/listtoday');
+                            Navigator.pushNamed(context, '/today');
                           }),
                       InkWell(
                         child: CardAllSchedule(
