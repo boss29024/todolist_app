@@ -86,7 +86,7 @@ class _ReminderPageState extends State<ReminderPage> {
                 children: [
                   AllTextCard(
                       icon: Icons.today,
-                      nameDateTime:
+                      stringText:
                           'วันที่ ${date.day} / ${date.month} / ${date.year}'),
                 ],
               ),
@@ -96,7 +96,7 @@ class _ReminderPageState extends State<ReminderPage> {
               children: [
                 AllTextCard(
                     icon: Icons.access_time_rounded,
-                    nameDateTime: 'เวลา ${time.hour} นาที ${time.minute}'),
+                    stringText: 'เวลา ${time.hour} : ${time.minute}'),
               ],
             ),
             onTap: _pickTime,

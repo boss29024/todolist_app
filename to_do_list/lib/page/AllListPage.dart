@@ -22,18 +22,18 @@ class _AllListPageState extends State<AllListPage> {
         backgroundColor: Colors.green,
       ),
       body: Container(
-          child: 
-          Obx(() => ListView.builder(
+          child: Obx(() => ListView.builder(
               itemCount: todoController.todos.length,
               itemBuilder: (_buildContext, index) {
                 return ListWidget(
                   headTitle: todoController.todos[index].header,
                   detailTitle: todoController.todos[index].note,
-                  date: todoController.todos[index].date.toString(),
-                  time: todoController.todos[index].time.toString(),
+                  date:
+                      '${todoController.todos[index].date.day} / ${todoController.todos[index].date.month} / ${todoController.todos[index].date.year}',
+                  time:
+                      '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
                 );
-              }))
-        ),
+              }))),
     );
   }
 }

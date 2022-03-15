@@ -27,8 +27,10 @@ class _FlagListPageState extends State<FlagListPage> {
                 return ListWidget(
                   headTitle: todoController.todos[index].header,
                   detailTitle: todoController.todos[index].note,
-                  date: todoController.todos[index].date.toString(),
-                  time: todoController.todos[index].time.toString(),
+                  date:
+                      '${todoController.todos[index].date.day} / ${todoController.todos[index].date.month} / ${todoController.todos[index].date.year}',
+                  time:
+                      '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
                 );
               }))),
     );
