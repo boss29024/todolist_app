@@ -37,7 +37,10 @@ class _ToDayPageState extends State<ToDayPage> {
                     time:
                         '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
                   );
-                } else {
+                } else if (nowDate.year !=
+                        todoController.todos[index].date.year &&
+                    nowDate.month != todoController.todos[index].date.month &&
+                    nowDate.day != todoController.todos[index].date.day) {
                   return Container(
                     alignment: Alignment.center,
                     height: heightDevice,
@@ -48,6 +51,7 @@ class _ToDayPageState extends State<ToDayPage> {
                     ),
                   );
                 }
+                return Container() ;
               }))),
     );
   }
