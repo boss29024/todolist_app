@@ -8,13 +8,14 @@ class Todo {
   final String header;
   @JsonKey(defaultValue: "")
   final String note;
-  @JsonKey(defaultValue: "")
-  final String list;
   final DateTime date;
   final DateTime time;
+  @JsonKey(defaultValue: false)
+  final bool isComplete;
 
 
-  Todo(this.header, this.note,this.list,this.date,this.time,);
+
+  Todo(this.header, this.note,this.date,this.time,this.isComplete);
 
   factory Todo.fromJson(Map<String, dynamic> json) =>
       _$TodoFromJson(json);
