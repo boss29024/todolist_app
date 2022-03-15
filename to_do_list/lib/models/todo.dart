@@ -13,11 +13,7 @@ class Todo {
   @JsonKey(defaultValue: false)
   final bool isComplete;
 
-
-
-  Todo(this.header, this.note,this.date,this.time,this.isComplete);
-
-  factory Todo.fromJson(Map<String, dynamic> json) =>
-      _$TodoFromJson(json);
+  Todo(this.header, this.note, this.date, this.time, this.isComplete);
+  factory Todo.fromJson(Map<String, dynamic> json) => _$TodoFromJson(json);
   Map<String, dynamic> toJson() => _$TodoToJson(this);
 }
