@@ -7,7 +7,7 @@ import 'package:to_do_list/page/AllListPage.dart';
 import 'package:to_do_list/page/DeadlineListPage.dart';
 import 'package:to_do_list/page/FlagListPage.dart';
 import 'package:to_do_list/page/HomePage.dart';
-import 'package:to_do_list/page/ListToDayPage.dart';
+import 'package:to_do_list/page/ToDayPage.dart';
 import 'package:to_do_list/page/MyListPage.dart';
 import 'package:to_do_list/page/ReminderPage.dart';
 import 'package:to_do_list/page/formListPage.dart';
@@ -44,7 +44,7 @@ class _AppState extends State<App> {
         '/': (context) => HomePage(),
         '/formList': (context) => FormListPage(),
         '/reminder': (context) => ReminderPage(),
-        '/listtoday': (context) => ListToDayPage(),
+        '/today': (context) => ToDayPage(),
         '/flaglist': (context) => FlagListPage(),
         '/deadline': (context) => DeadlineListPage(),
         '/alllist': (context) => AllListPage(),
