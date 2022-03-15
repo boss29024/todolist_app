@@ -17,7 +17,7 @@ class _CompleteListPageState extends State<CompleteListPage> {
     TodoController todoController = Get.find();
     return Scaffold(
       appBar: AppBar(
-        title: Text('ติดธงอยู่'),
+        title: Text('ทำเสร็จแล้ว'),
         backgroundColor: Colors.orange,
       ),
       body: Container(
