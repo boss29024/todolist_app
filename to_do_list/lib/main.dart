@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:to_do_list/page/AllHeadListPage.dart';
 import 'package:to_do_list/page/AllListPage.dart';
 import 'package:to_do_list/page/DeadlineListPage.dart';
-import 'package:to_do_list/page/FlagListPage.dart';
+import 'package:to_do_list/page/CompleteListPage.dart';
 import 'package:to_do_list/page/HomePage.dart';
+import 'package:to_do_list/page/NewListPage.dart';
 import 'package:to_do_list/page/ToDayPage.dart';
-import 'package:to_do_list/page/MyListPage.dart';
 import 'package:to_do_list/page/ReminderPage.dart';
-import 'package:to_do_list/page/formListPage.dart';
 
 import 'controllers/todo.controller.dart';
 
@@ -42,14 +40,12 @@ class _AppState extends State<App> {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(),
-        '/formList': (context) => FormListPage(),
+        '/newList': (context) => NewListPage(),
         '/reminder': (context) => ReminderPage(),
         '/today': (context) => ToDayPage(),
-        '/flaglist': (context) => FlagListPage(),
+        '/complete': (context) => CompleteListPage(),
         '/deadline': (context) => DeadlineListPage(),
         '/alllist': (context) => AllListPage(),
-        '/mylistpage': (context) => MyListPage(),
-        '/allheadlist':(context) => AllHeadListPage(),
       },
     );
   }
