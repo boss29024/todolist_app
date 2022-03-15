@@ -12,9 +12,13 @@ class DeadlineListPage extends StatefulWidget {
 }
 
 class _DeadlineListPageState extends State<DeadlineListPage> {
+  final nowDate = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     TodoController todoController = Get.find();
+    final heightDevice = MediaQuery.of(context).size.height;
+    final widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text('กำหนดเวลา'),
@@ -24,14 +28,27 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
           child: Obx(() => ListView.builder(
               itemCount: todoController.todos.length,
               itemBuilder: (_buildContext, index) {
-                return ListWidget(
-                  headTitle: todoController.todos[index].header,
-                  detailTitle: todoController.todos[index].note,
-                  date:
-                      '${todoController.todos[index].date.day} / ${todoController.todos[index].date.month} / ${todoController.todos[index].date.year}',
-                  time:
-                      '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
-                );
+                if (nowDate.minute != null && nowDate.hour != null) {
+                  return ListWidget(
+                    headTitle: todoController.todos[index].header,
+                    detailTitle: todoController.todos[index].note,
+                    date:
+                        '${todoController.todos[index].date.day} / ${todoController.todos[index].date.month} / ${todoController.todos[index].date.year}',
+                    time:
+                        '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
+                  );
+                } else if (nowDate.minute == null && nowDate.hour == null) {
+                  return Container(
+                    alignment: Alignment.center,
+                    height: heightDevice,
+                    width: widthDevice,
+                    child: Text(
+                      'ไม่มีเตือนความจำ',
+                      style: TextStyle(fontSize: 24, color: Colors.grey),
+                    ),
+                  );
+                }
+                return Container();
               }))),
     );
   }
