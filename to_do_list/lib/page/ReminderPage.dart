@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:to_do_list/models/todo.dart';
-import 'package:to_do_list/widgets/dateTimePick.dart';
 import 'package:to_do_list/widgets/AllTextCard.dart';
 
 import '../controllers/todo.controller.dart';
@@ -24,6 +23,7 @@ class _ReminderPageState extends State<ReminderPage> {
   TextEditingController noteTextController = TextEditingController();
 
   TodoController todoController = Get.find();
+
   @override
   void initState() {
     super.initState();
@@ -101,17 +101,6 @@ class _ReminderPageState extends State<ReminderPage> {
             ),
             onTap: _pickTime,
           ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(primary: Colors.white),
-            onPressed: () {
-              Navigator.pushNamed(context, '/allheadlist');
-            },
-            child: const ListTile(
-              title: Text('ลิสต์'),
-              enabled: false,
-              trailing: Icon(Icons.arrow_forward_ios),
-            ),
-          ),
           Container(
             padding: const EdgeInsets.all(5),
             child: Row(
@@ -121,7 +110,7 @@ class _ReminderPageState extends State<ReminderPage> {
                   child: const Text('เพิ่ม'),
                   onPressed: () {
                     Todo todo = Todo(headerTextController.text,
-                        noteTextController.text, '', date, time);
+                        noteTextController.text, date, time, false);
                     todoController.addTodo(todo);
                     Navigator.pop(context);
                   },
