@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FormListPage extends StatefulWidget {
-  FormListPage({
+class NewListPage extends StatefulWidget {
+  NewListPage({
     Key? key,
   }) : super(key: key);
 
@@ -9,10 +9,10 @@ class FormListPage extends StatefulWidget {
   // final IconData iconList;
 
   @override
-  State<FormListPage> createState() => _FormListPageState();
+  State<NewListPage> createState() => _NewListPageState();
 }
 
-class _FormListPageState extends State<FormListPage> {
+class _NewListPageState extends State<NewListPage> {
   TextEditingController listTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
