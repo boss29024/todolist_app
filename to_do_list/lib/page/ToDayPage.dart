@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/models/todo.dart';
 import 'package:to_do_list/widgets/listWidget.dart';
 import 'package:get/get.dart';
 import '../controllers/todo.controller.dart';
@@ -12,6 +13,7 @@ class ToDayPage extends StatefulWidget {
 
 class _ToDayPageState extends State<ToDayPage> {
   final nowDate = DateTime.now();
+  bool value = false;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,8 @@ class _ToDayPageState extends State<ToDayPage> {
               itemBuilder: (_buildContext, index) {
                 if (nowDate.year == todoController.todos[index].date.year &&
                     nowDate.month == todoController.todos[index].date.month &&
-                    nowDate.day == todoController.todos[index].date.day) {
+                    nowDate.day == todoController.todos[index].date.day &&
+                    value != todoController.todos[index].isComplete) {
                   return ListWidget(
                     headTitle: todoController.todos[index].header,
                     detailTitle: todoController.todos[index].note,
@@ -36,11 +39,22 @@ class _ToDayPageState extends State<ToDayPage> {
                         '${todoController.todos[index].date.day} / ${todoController.todos[index].date.month} / ${todoController.todos[index].date.year}',
                     time:
                         '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
+                    isCheck: todoController.todos[index].isComplete,
+                    onComplete: (val) {
+                      Todo todo = Todo(
+                          todoController.todos[index].header,
+                          todoController.todos[index].note,
+                          todoController.todos[index].date,
+                          todoController.todos[index].time,
+                          val);
+                      todoController.editTodo(index, todo);
+                    },
                   );
                 } else if (nowDate.year !=
                         todoController.todos[index].date.year &&
                     nowDate.month != todoController.todos[index].date.month &&
-                    nowDate.day != todoController.todos[index].date.day) {
+                    nowDate.day != todoController.todos[index].date.day &&
+                    value == todoController.todos[index].isComplete) {
                   return Container(
                     alignment: Alignment.center,
                     height: heightDevice,

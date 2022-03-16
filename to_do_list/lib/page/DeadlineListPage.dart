@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_list/models/todo.dart';
 import 'package:to_do_list/widgets/listWidget.dart';
 import 'package:get/get.dart';
 
@@ -36,6 +37,16 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
                         '${todoController.todos[index].date.day} / ${todoController.todos[index].date.month} / ${todoController.todos[index].date.year}',
                     time:
                         '${todoController.todos[index].time.hour} : ${todoController.todos[index].time.minute}',
+                    isCheck: todoController.todos[index].isComplete,
+                    onComplete: (val) {
+                      Todo todo = Todo(
+                          todoController.todos[index].header,
+                          todoController.todos[index].note,
+                          todoController.todos[index].date,
+                          todoController.todos[index].time,
+                          val);
+                      todoController.editTodo(index, todo);
+                    },
                   );
                 } else if (nowDate.minute == null && nowDate.hour == null) {
                   return Container(
