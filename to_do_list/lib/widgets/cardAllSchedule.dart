@@ -10,8 +10,6 @@ class CardAllSchedule extends StatelessWidget {
       this.icon = Icons.error})
       : super(key: key);
 
-  //final Function onChanged;
-  //final Function onTap;
   final String headcard;
   final int score;
   final IconData icon;
