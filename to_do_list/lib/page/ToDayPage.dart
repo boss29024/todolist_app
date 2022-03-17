@@ -13,7 +13,6 @@ class ToDayPage extends StatefulWidget {
 
 class _ToDayPageState extends State<ToDayPage> {
   final nowDate = DateTime.now();
-  bool value = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +29,7 @@ class _ToDayPageState extends State<ToDayPage> {
               itemBuilder: (_buildContext, index) {
                 if (nowDate.year == todoController.todos[index].date.year &&
                     nowDate.month == todoController.todos[index].date.month &&
-                    nowDate.day == todoController.todos[index].date.day &&
-                    value != todoController.todos[index].isComplete) {
+                    nowDate.day == todoController.todos[index].date.day) {
                   return ListWidget(
                     headTitle: todoController.todos[index].header,
                     detailTitle: todoController.todos[index].note,
@@ -50,22 +48,16 @@ class _ToDayPageState extends State<ToDayPage> {
                       todoController.editTodo(index, todo);
                     },
                   );
-                } else if (nowDate.year !=
-                        todoController.todos[index].date.year &&
-                    nowDate.month != todoController.todos[index].date.month &&
-                    nowDate.day != todoController.todos[index].date.day &&
-                    value == todoController.todos[index].isComplete) {
-                  return Container(
-                    alignment: Alignment.center,
-                    height: heightDevice,
-                    width: widthDevice,
-                    child: Text(
-                      'ไม่มีเตือนความจำ',
-                      style: TextStyle(fontSize: 24, color: Colors.grey),
-                    ),
-                  );
                 }
-                return Container();
+                return Container(
+                  alignment: Alignment.center,
+                  height: heightDevice,
+                  width: widthDevice,
+                  child: Text(
+                    'ไม่มีเตือนความจำ',
+                    style: TextStyle(fontSize: 24, color: Colors.grey),
+                  ),
+                );
               }))),
     );
   }
