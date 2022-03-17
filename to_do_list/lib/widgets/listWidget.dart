@@ -18,7 +18,7 @@ class ListWidget extends StatefulWidget {
     required this.detailTitle,
     required this.date,
     required this.time,
-    required this.isCheck, 
+    required this.isCheck,
     required this.onComplete,
   }) : super(key: key);
 
@@ -47,6 +47,19 @@ class _ListWidgetState extends State<ListWidget> {
             },
             title: Text('ทำเสร็จแล้ว'),
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: const Text('แก้ไข'),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text('ลบ'),
+              ),
+            ],
+          )
         ]);
   }
 }
