@@ -47,7 +47,13 @@ class _CompleteListPageState extends State<CompleteListPage> {
                           val);
                       todoController.editTodo(index, todo);
                     },
-                    onDelete: () {},
+                    onDelete: () {Todo todo = Todo(
+                          todoController.todos[index].header,
+                          todoController.todos[index].note,
+                          todoController.todos[index].date,
+                          todoController.todos[index].time,
+                          todoController.todos[index].isComplete);
+                      todoController.deleteTodo(index, todo); },
                   );
                 } else {
                   if (value == todoController.todos[index].isComplete) {
