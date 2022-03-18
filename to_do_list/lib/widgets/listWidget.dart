@@ -11,7 +11,6 @@ class ListWidget extends StatefulWidget {
   final String time;
   final bool isCheck;
   final Function onComplete;
-  final Function onEdit;
   final Function onDelete;
 
   const ListWidget({
@@ -22,7 +21,6 @@ class ListWidget extends StatefulWidget {
     required this.time,
     required this.isCheck,
     required this.onComplete,
-    required this.onEdit,
     required this.onDelete,
   }) : super(key: key);
 
@@ -56,7 +54,7 @@ class _ListWidgetState extends State<ListWidget> {
             children: [
               TextButton(
                 onPressed: () {
-                  widget.onEdit;
+                  Navigator.popAndPushNamed(context, '/edit');
                 },
                 child: const Text('แก้ไข'),
               ),
