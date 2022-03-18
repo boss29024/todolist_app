@@ -48,27 +48,20 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
                       todoController.editTodo(index, todo);
                     },
                     onEdit: () {},
-                    onDelete: () {
-                      Todo todo = Todo(
-                        todoController.todos[index].header,
-                        todoController.todos[index].note,
-                        todoController.todos[index].date,
-                        todoController.todos[index].time,
-                        todoController.todos[index].isComplete,
-                      );
-                      todoController.deleteTodo(index, todo);
-                    },
+                    onDelete: () {},
                   );
-                } else if (nowDate.minute == null && nowDate.hour == null) {
-                  return Container(
-                    alignment: Alignment.center,
-                    height: heightDevice,
-                    width: widthDevice,
-                    child: Text(
-                      'ไม่มีเตือนความจำ',
-                      style: TextStyle(fontSize: 24, color: Colors.grey),
-                    ),
-                  );
+                } else {
+                  if (nowDate.minute == null && nowDate.hour == null) {
+                    return Container(
+                      alignment: Alignment.center,
+                      height: heightDevice,
+                      width: widthDevice,
+                      child: Text(
+                        'ไม่มีเตือนความจำ',
+                        style: TextStyle(fontSize: 24, color: Colors.grey),
+                      ),
+                    );
+                  }
                 }
                 return Container();
               }))),
