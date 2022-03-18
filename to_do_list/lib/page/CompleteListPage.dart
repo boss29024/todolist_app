@@ -57,19 +57,18 @@ class _CompleteListPageState extends State<CompleteListPage> {
                       todoController.deleteTodo(index, todo);
                     },
                   );
-                } else {
-                  if (value == todoController.todos[index].isComplete) {
-                    return Container(
-                      alignment: Alignment.center,
-                      height: heightDevice,
-                      width: widthDevice,
-                      child: Text(
-                        'ไม่มีเตือนความจำ',
-                        style: TextStyle(fontSize: 24, color: Colors.grey),
-                      ),
-                    );
-                  }
+                } else if (value == todoController.todos[index].isComplete) {
+                  return Container(
+                    alignment: Alignment.center,
+                    height: heightDevice,
+                    width: widthDevice,
+                    child: Text(
+                      'ไม่มีเตือนความจำ',
+                      style: TextStyle(fontSize: 24, color: Colors.grey),
+                    ),
+                  );
                 }
+
                 return Container();
               }))),
     );
