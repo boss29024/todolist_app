@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:to_do_list/models/todo.dart';
+import 'package:to_do_list/page/EditPage.dart';
 
 import '../controllers/todo.controller.dart';
 
@@ -53,9 +54,7 @@ class _ListWidgetState extends State<ListWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
-                onPressed: () {
-                  Navigator.popAndPushNamed(context, '/edit');
-                },
+                onPressed: () {},
                 child: const Text('แก้ไข'),
               ),
               TextButton(
