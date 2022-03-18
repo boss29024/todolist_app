@@ -13,7 +13,7 @@ class CompleteListPage extends StatefulWidget {
 }
 
 class _CompleteListPageState extends State<CompleteListPage> {
-  bool value = false;
+  bool value = true;
   @override
   Widget build(BuildContext context) {
     TodoController todoController = Get.find();
@@ -29,7 +29,7 @@ class _CompleteListPageState extends State<CompleteListPage> {
           child: Obx(() => ListView.builder(
               itemCount: todoController.todos.length,
               itemBuilder: (_buildContext, index) {
-                if (value != todoController.todos[index].isComplete) {
+                if (value == todoController.todos[index].isComplete) {
                   return ListWidget(
                     headTitle: todoController.todos[index].header,
                     detailTitle: todoController.todos[index].note,
@@ -57,18 +57,7 @@ class _CompleteListPageState extends State<CompleteListPage> {
                       todoController.deleteTodo(index, todo);
                     },
                   );
-                } else if (value == todoController.todos[index].isComplete) {
-                  return Container(
-                    alignment: Alignment.center,
-                    height: heightDevice,
-                    width: widthDevice,
-                    child: Text(
-                      'ไม่มีเตือนความจำ',
-                      style: TextStyle(fontSize: 24, color: Colors.grey),
-                    ),
-                  );
                 }
-
                 return Container();
               }))),
     );
