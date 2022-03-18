@@ -44,5 +44,7 @@ class TodoController extends GetxController {
 
   void deleteTodo(int index, Todo todo) {
     todos.value = [...todos.sublist(0, index), ...todos.sublist(index + 1)];
+    todos.remove(todo);
+    todos.removeAt(index);
   }
 }
