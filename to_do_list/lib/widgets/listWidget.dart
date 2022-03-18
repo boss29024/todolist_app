@@ -55,11 +55,15 @@ class _ListWidgetState extends State<ListWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
-                onPressed: widget.onEdit(),
+                onPressed: () {
+                  widget.onEdit;
+                },
                 child: const Text('แก้ไข'),
               ),
               TextButton(
-                onPressed: widget.onDelete(),
+                onPressed: () {
+                  widget.onDelete;
+                },
                 child: const Text('ลบ'),
               ),
             ],
