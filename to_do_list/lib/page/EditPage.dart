@@ -31,110 +31,102 @@ class _EditPageState extends State<EditPage> {
   Widget build(BuildContext context) {
     final heightDevice = MediaQuery.of(context).size.height;
     final widthDevice = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: Container(
-          child: Obx(() => ListView.builder(
-              itemCount: todoController.todos.length,
-              itemBuilder: (_buildContext, index) {
-                return Column(
-                  children: [
-                    Padding(padding: EdgeInsets.all(5)),
-                    Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                      ),
-                      child: Container(
-                        height: (heightDevice / 100) * 35,
-                        width: widthDevice,
-                        padding: const EdgeInsets.all(10),
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                  flex: 1,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        height: (heightDevice / 100) * 10,
-                                        width: widthDevice,
-                                        child: TextField(
-                                          decoration: const InputDecoration(
-                                            hintText: 'ชื่อเรื่อง',
-                                          ),
-                                          controller: headerTextController,
-                                        ),
-                                      ),
-                                      Container(
-                                        height: (heightDevice / 100) * 10,
-                                        width: widthDevice,
-                                        child: TextField(
-                                          decoration: const InputDecoration(
-                                            hintText: 'โน้ต',
-                                          ),
-                                          controller: noteTextController,
-                                        ),
-                                      ),
-                                    ],
-                                  )),
-                            ]),
-                      ),
-                    ),
-                    InkWell(
-                        child: Row(
-                          children: [
-                            AllTextCard(
-                                icon: Icons.today,
-                                stringText:
-                                    'วันที่ ${date.day} / ${date.month} / ${date.year}'),
-                          ],
-                        ),
-                        onTap: _pickDate),
-                    InkWell(
-                      child: Row(
+    return Container(
+        child: Column(
+      children: [
+        Padding(padding: EdgeInsets.all(5)),
+        Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          child: Container(
+            height: (heightDevice / 100) * 35,
+            width: widthDevice,
+            padding: const EdgeInsets.all(10),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                      flex: 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          AllTextCard(
-                              icon: Icons.access_time_rounded,
-                              stringText: 'เวลา ${time.hour} : ${time.minute}'),
-                        ],
-                      ),
-                      onTap: _pickTime,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          ElevatedButton(
-                            child: const Text('แก้ไข'),
-                            onPressed: () {
-                              Todo todo = Todo(
-                                todoController.todos[index].header,
-                                todoController.todos[index].note,
-                                todoController.todos[index].date,
-                                todoController.todos[index].time,
-                                todoController.todos[index].isComplete,
-                              );
-                              todoController.editTodo(index, todo);
-                              Navigator.pop(context);
-                            },
+                          Container(
+                            height: (heightDevice / 100) * 10,
+                            width: widthDevice,
+                            child: TextField(
+                              decoration: const InputDecoration(
+                                hintText: 'ชื่อเรื่อง',
+                              ),
+                              controller: headerTextController,
+                            ),
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          InkWell(
-                            child: const Text('ยกเลิก'),
-                            onTap: () => Navigator.pop(context),
+                          Container(
+                            height: (heightDevice / 100) * 10,
+                            width: widthDevice,
+                            child: TextField(
+                              decoration: const InputDecoration(
+                                hintText: 'โน้ต',
+                              ),
+                              controller: noteTextController,
+                            ),
                           ),
                         ],
-                      ),
-                    ),
-                  ],
-                );
-              }))),
-    );
+                      )),
+                ]),
+          ),
+        ),
+        InkWell(
+            child: Row(
+              children: [
+                AllTextCard(
+                    icon: Icons.today,
+                    stringText:
+                        'วันที่ ${date.day} / ${date.month} / ${date.year}'),
+              ],
+            ),
+            onTap: _pickDate),
+        InkWell(
+          child: Row(
+            children: [
+              AllTextCard(
+                  icon: Icons.access_time_rounded,
+                  stringText: 'เวลา ${time.hour} : ${time.minute}'),
+            ],
+          ),
+          onTap: _pickTime,
+        ),
+        Container(
+          padding: const EdgeInsets.all(5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ElevatedButton(
+                child: const Text('แก้ไข'),
+                onPressed: () {
+                  // Todo todo = Todo(
+                  //     todoController.todos[index].header,
+                  //     todoController.todos[index].note,
+                  //     todoController.todos[index].date,
+                  //     todoController.todos[index].time,
+                  //     todoController.todos[index].isComplete);
+                  // todoController.editTodo(index, todo);
+                  Navigator.pop(context);
+                },
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              InkWell(
+                child: const Text('ยกเลิก'),
+                onTap: () => Navigator.pop(context),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ));
   }
 
   _pickDate() async {
