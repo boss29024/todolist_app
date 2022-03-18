@@ -11,6 +11,8 @@ class ListWidget extends StatefulWidget {
   final String time;
   final bool isCheck;
   final Function onComplete;
+  final Function onEdit;
+  final Function onDelete;
 
   const ListWidget({
     Key? key,
@@ -20,6 +22,8 @@ class ListWidget extends StatefulWidget {
     required this.time,
     required this.isCheck,
     required this.onComplete,
+    required this.onEdit,
+    required this.onDelete,
   }) : super(key: key);
 
   @override
@@ -51,11 +55,11 @@ class _ListWidgetState extends State<ListWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
-                onPressed: () {},
+                onPressed: widget.onEdit(),
                 child: const Text('แก้ไข'),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: widget.onDelete(),
                 child: const Text('ลบ'),
               ),
             ],

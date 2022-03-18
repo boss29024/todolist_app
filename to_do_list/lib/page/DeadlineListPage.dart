@@ -47,6 +47,17 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
                           val);
                       todoController.editTodo(index, todo);
                     },
+                    onEdit: () {},
+                    onDelete: () {
+                      Todo todo = Todo(
+                        todoController.todos[index].header,
+                        todoController.todos[index].note,
+                        todoController.todos[index].date,
+                        todoController.todos[index].time,
+                        todoController.todos[index].isComplete,
+                      );
+                      todoController.deleteTodo(index, todo);
+                    },
                   );
                 } else if (nowDate.minute == null && nowDate.hour == null) {
                   return Container(
