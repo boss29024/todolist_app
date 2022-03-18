@@ -47,7 +47,6 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
                           val);
                       todoController.editTodo(index, todo);
                     },
-                    onEdit: () {},
                     onDelete: () {},
                   );
                 } else {

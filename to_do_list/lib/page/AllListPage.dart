@@ -43,7 +43,6 @@ class _AllListPageState extends State<AllListPage> {
                         val);
                     todoController.editTodo(index, todo);
                   },
-                  onEdit: () {},
                   onDelete: () {
                     Todo todo = Todo(
                       todoController.todos[index].header,

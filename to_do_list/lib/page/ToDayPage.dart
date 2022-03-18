@@ -47,7 +47,6 @@ class _ToDayPageState extends State<ToDayPage> {
                           val);
                       todoController.editTodo(index, todo);
                     },
-                    onEdit: () {},
                     onDelete: () {},
                   );
                 } else {

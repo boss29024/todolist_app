@@ -47,7 +47,6 @@ class _CompleteListPageState extends State<CompleteListPage> {
                           val);
                       todoController.editTodo(index, todo);
                     },
-                    onEdit: () {},
                     onDelete: () {},
                   );
                 } else {
