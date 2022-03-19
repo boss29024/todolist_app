@@ -57,6 +57,7 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
                       );
                       todoController.deleteTodo(index, todo);
                     },
+                    onEdit: () {},
                   );
                 } else {
                   if (nowDate.minute == null && nowDate.hour == null) {

@@ -53,6 +53,11 @@ class _AllListPageState extends State<AllListPage> {
                     );
                     todoController.deleteTodo(index, todo);
                   },
+                  onEdit: () {
+                    setState(() {
+                      Navigator.pushNamed(context, '/edit');
+                    });
+                  },
                 );
               }))),
     );

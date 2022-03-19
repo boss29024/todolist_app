@@ -56,6 +56,7 @@ class _CompleteListPageState extends State<CompleteListPage> {
                           todoController.todos[index].isComplete);
                       todoController.deleteTodo(index, todo);
                     },
+                    onEdit: () {},
                   );
                 }
                 return Container();

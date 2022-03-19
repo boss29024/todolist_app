@@ -57,6 +57,7 @@ class _ToDayPageState extends State<ToDayPage> {
                       );
                       todoController.deleteTodo(index, todo);
                     },
+                    onEdit: () {},
                   );
                 } else {
                   if (nowDate.year != todoController.todos[index].date.year &&
