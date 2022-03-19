@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:to_do_list/controllers/todo.controller.dart';
 import 'package:to_do_list/page/ReminderPage.dart';
 
 import 'package:to_do_list/widgets/cardAllSchedule.dart';
@@ -16,6 +18,8 @@ enum BottonIcons { Add, List }
 
 class _HomePageState extends State<HomePage> {
   BottonIcons bottonIcons = BottonIcons.Add;
+  TodoController todoController = Get.find();
+  final nowDate = DateTime.now();
 
   Align buildButtomBotton(BuildContext context, double widthDevice) {
     return Align(
@@ -87,8 +91,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Stack(
         children: [
-          SingleChildScrollView(
-            child: Padding(
+          Container(
               padding: const EdgeInsets.all(10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                           child: CardAllSchedule(
                             icon: Icons.today,
                             headcard: 'วันนี้',
-                            score: 1,
+                            score: todoController.todos.length,
                           ),
                           onTap: () {
                             Navigator.pushNamed(context, '/today');
@@ -108,7 +111,7 @@ class _HomePageState extends State<HomePage> {
                         child: CardAllSchedule(
                           icon: Icons.calendar_month,
                           headcard: 'กำหนดเวลา',
-                          score: 1,
+                          score: todoController.todos.length,
                         ),
                         onTap: () {
                           Navigator.pushNamed(context, '/deadline');
@@ -125,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                           child: CardAllSchedule(
                             icon: Icons.inbox,
                             headcard: 'ทั้งหมด',
-                            score: 1,
+                            score: todoController.todos.length,
                           )),
                       InkWell(
                         onTap: (() {
@@ -137,9 +140,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ],
-              ),
-            ),
-          ),
+              )),
           buildButtomBotton(context, widthDevice)
         ],
       ),
