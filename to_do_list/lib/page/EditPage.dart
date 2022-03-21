@@ -6,7 +6,11 @@ import 'package:to_do_list/widgets/AllTextCard.dart';
 import '../controllers/todo.controller.dart';
 
 class EditPage extends StatefulWidget {
-  EditPage({Key? key}) : super(key: key);
+  final int indexEnit;
+  EditPage({
+    Key? key,
+    required this.indexEnit,
+  }) : super(key: key);
 
   @override
   State<EditPage> createState() => _EditPageState();
@@ -20,8 +24,6 @@ class _EditPageState extends State<EditPage> {
 
   TodoController todoController = Get.find();
 
-  int index = 0;
-
   @override
   void initState() {
     super.initState();
@@ -34,7 +36,7 @@ class _EditPageState extends State<EditPage> {
     final heightDevice = MediaQuery.of(context).size.height;
     final widthDevice = MediaQuery.of(context).size.width;
     return Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(5),
         child: Column(
           children: [
             Container(
@@ -60,7 +62,9 @@ class _EditPageState extends State<EditPage> {
               ),
             ),
             Container(
+              width: widthDevice,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   InkWell(
                       child: Row(
@@ -98,8 +102,8 @@ class _EditPageState extends State<EditPage> {
                           noteTextController.text,
                           date,
                           time,
-                          todoController.todos[index].isComplete);
-                      todoController.editTodo(index, todo);
+                          todoController.todos[widget.indexEnit].isComplete);
+                      todoController.editTodo(widget.indexEnit, todo);
                       Navigator.pop(context);
                     },
                   ),

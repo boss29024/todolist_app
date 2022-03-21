@@ -20,7 +20,7 @@ class AllTextCard extends StatelessWidget {
       child: Container(
           padding: EdgeInsets.all(5),
           height: (heightDevice / 100) * 10,
-          width: (widthDevice/100)*90,
+          width: (widthDevice / 100) * 85,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

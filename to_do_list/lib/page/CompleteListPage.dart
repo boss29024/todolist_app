@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:to_do_list/models/todo.dart';
+import 'package:to_do_list/page/EditPage.dart';
 import 'package:to_do_list/widgets/listWidget.dart';
 
 import '../controllers/todo.controller.dart';
@@ -58,7 +59,29 @@ class _CompleteListPageState extends State<CompleteListPage> {
                     },
                     onEdit: () {
                       setState(() {
-                        Navigator.pushNamed(context, '/edit');
+                        showModalBottomSheet<void>(
+                          isScrollControlled: true,
+                          shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(20))),
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
+                              padding: const EdgeInsets.all(16),
+                              height: 600,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  const Text(
+                                    'เตือนความจำใหม่',
+                                    style: TextStyle(fontSize: 24),
+                                  ),
+                                  EditPage(indexEnit: index),
+                                ],
+                              ),
+                            );
+                          },
+                        );
                       });
                     },
                   );
