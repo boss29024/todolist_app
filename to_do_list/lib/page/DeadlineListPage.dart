@@ -13,8 +13,6 @@ class DeadlineListPage extends StatefulWidget {
 }
 
 class _DeadlineListPageState extends State<DeadlineListPage> {
-  final nowDate = DateTime.now();
-
   @override
   Widget build(BuildContext context) {
     TodoController todoController = Get.find();
@@ -29,7 +27,7 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
           child: Obx(() => ListView.builder(
               itemCount: todoController.todos.length,
               itemBuilder: (_buildContext, index) {
-                if (nowDate.minute != null && nowDate.hour != null) {
+                if (todoController.todos[index].time != null) {
                   return ListWidget(
                     headTitle: todoController.todos[index].header,
                     detailTitle: todoController.todos[index].note,
@@ -60,7 +58,7 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
                     onEdit: () {},
                   );
                 } else {
-                  if (nowDate.minute == null && nowDate.hour == null) {
+                  if (todoController.todos[index].time == null) {
                     return Container(
                       alignment: Alignment.center,
                       height: heightDevice,
