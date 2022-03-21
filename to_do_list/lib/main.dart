@@ -5,7 +5,6 @@ import 'package:get_storage/get_storage.dart';
 import 'package:to_do_list/page/AllListPage.dart';
 import 'package:to_do_list/page/DeadlineListPage.dart';
 import 'package:to_do_list/page/CompleteListPage.dart';
-import 'package:to_do_list/page/EditPage.dart';
 import 'package:to_do_list/page/HomePage.dart';
 import 'package:to_do_list/page/ToDayPage.dart';
 import 'package:to_do_list/page/ReminderPage.dart';
@@ -45,7 +44,6 @@ class _AppState extends State<App> {
         '/complete': (context) => CompleteListPage(),
         '/deadline': (context) => DeadlineListPage(),
         '/alllist': (context) => AllListPage(),
-        '/edit': (context) => EditPage(),
       },
     );
   }
