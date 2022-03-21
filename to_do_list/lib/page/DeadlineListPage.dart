@@ -55,7 +55,11 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
                       );
                       todoController.deleteTodo(index, todo);
                     },
-                    onEdit: () {},
+                    onEdit: () {
+                      setState(() {
+                        Navigator.pushNamed(context, '/edit');
+                      });
+                    },
                   );
                 } else {
                   if (todoController.todos[index].time == null) {

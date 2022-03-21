@@ -56,7 +56,11 @@ class _CompleteListPageState extends State<CompleteListPage> {
                           todoController.todos[index].isComplete);
                       todoController.deleteTodo(index, todo);
                     },
-                    onEdit: () {},
+                    onEdit: () {
+                      setState(() {
+                        Navigator.pushNamed(context, '/edit');
+                      });
+                    },
                   );
                 }
                 return Container();
