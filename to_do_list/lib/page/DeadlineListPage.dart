@@ -75,7 +75,7 @@ class _DeadlineListPageState extends State<DeadlineListPage> {
                                     'แก้ไขเตือนความจำ',
                                     style: TextStyle(fontSize: 24),
                                   ),
-                                  EditPage(indexEnit: index),
+                                  EditPage(indexEdit: index),
                                 ],
                               ),
                             );

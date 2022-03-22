@@ -6,10 +6,10 @@ import 'package:to_do_list/widgets/AllTextCard.dart';
 import '../controllers/todo.controller.dart';
 
 class EditPage extends StatefulWidget {
-  final int indexEnit;
+  final int indexEdit;
   EditPage({
     Key? key,
-    required this.indexEnit,
+    required this.indexEdit,
   }) : super(key: key);
 
   @override
@@ -111,8 +111,8 @@ class _EditPageState extends State<EditPage> {
                           noteTextController.text,
                           date,
                           time,
-                          todoController.todos[widget.indexEnit].isComplete);
-                      todoController.editTodo(widget.indexEnit, todo);
+                          todoController.todos[widget.indexEdit].isComplete);
+                      todoController.editTodo(widget.indexEdit, todo);
                       Navigator.pop(context);
                     },
                   ),

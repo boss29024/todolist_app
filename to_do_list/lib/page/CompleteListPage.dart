@@ -73,7 +73,7 @@ class _CompleteListPageState extends State<CompleteListPage> {
                                     'แก้ไขเตือนความจำ',
                                     style: TextStyle(fontSize: 24),
                                   ),
-                                  EditPage(indexEnit: index),
+                                  EditPage(indexEdit: index),
                                 ],
                               ),
                             );

@@ -72,7 +72,7 @@ class _AllListPageState extends State<AllListPage> {
                                   'แก้ไขเตือนความจำ',
                                   style: TextStyle(fontSize: 24),
                                 ),
-                                EditPage(indexEnit: index),
+                                EditPage(indexEdit: index),
                               ],
                             ),
                           );

@@ -77,7 +77,7 @@ class _ToDayPageState extends State<ToDayPage> {
                                     'แก้ไขเตือนความจำ',
                                     style: TextStyle(fontSize: 24),
                                   ),
-                                  EditPage(indexEnit: index),
+                                  EditPage(indexEdit: index),
                                 ],
                               ),
                             );
