@@ -36,7 +36,7 @@ class _EditPageState extends State<EditPage> {
     final heightDevice = MediaQuery.of(context).size.height;
     final widthDevice = MediaQuery.of(context).size.width;
     return Container(
-        padding: EdgeInsets.all(5),
+        padding: EdgeInsets.all(10),
         child: Column(
           children: [
             Container(
@@ -50,6 +50,9 @@ class _EditPageState extends State<EditPage> {
                 controller: headerTextController,
               ),
             ),
+            SizedBox(
+              height: (heightDevice / 100) * 3,
+            ),
             Container(
               height: (heightDevice / 100) * 10,
               width: widthDevice,
@@ -60,6 +63,9 @@ class _EditPageState extends State<EditPage> {
                 ),
                 controller: noteTextController,
               ),
+            ),
+            SizedBox(
+              height: (heightDevice / 100) * 3,
             ),
             Container(
               width: widthDevice,
@@ -76,6 +82,9 @@ class _EditPageState extends State<EditPage> {
                         ],
                       ),
                       onTap: _pickDate),
+                  SizedBox(
+                    height: (heightDevice / 100) * 2,
+                  ),
                   InkWell(
                     child: Row(
                       children: [
