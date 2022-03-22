@@ -96,6 +96,9 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(
+                    height: (heightDevice / 100) * 2,
+                  ),
                   Row(
                     children: [
                       InkWell(
@@ -116,6 +119,9 @@ class _HomePageState extends State<HomePage> {
                         },
                       )
                     ],
+                  ),
+                  SizedBox(
+                    height: (heightDevice / 100) * 2,
                   ),
                   Row(
                     children: [
