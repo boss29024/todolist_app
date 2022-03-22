@@ -97,7 +97,7 @@ class _ToDayPageState extends State<ToDayPage> {
                           actions: [
                             TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/todo');
+                                  Navigator.pushNamed(context, '/today');
                                 },
                                 child: const Text('OK'))
                           ]),
