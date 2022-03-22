@@ -87,20 +87,39 @@ class _ToDayPageState extends State<ToDayPage> {
                     },
                   );
                 } else {
-                  if (nowDate.year != todoController.todos[index].date.year &&
-                      nowDate.month != todoController.todos[index].date.month &&
-                      nowDate.day != todoController.todos[index].date.day) {
+                  if (nowDate.minute ==
+                          todoController.todos[index].time.minute &&
+                      nowDate.hour == todoController.todos[index].time.hour) {
                     return Container(
-                      alignment: Alignment.center,
-                      height: heightDevice,
-                      width: widthDevice,
-                      child: Text(
-                        'ไม่มีเตือนความจำ',
-                        style: TextStyle(fontSize: 24, color: Colors.grey),
-                      ),
+                      child: AlertDialog(
+                          title: Text(todoController.todos[index].header),
+                          content: Text(todoController.todos[index].note),
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/todo');
+                                },
+                                child: const Text('OK'))
+                          ]),
                     );
+                  } else {
+                    if (nowDate.year != todoController.todos[index].date.year &&
+                        nowDate.month !=
+                            todoController.todos[index].date.month &&
+                        nowDate.day != todoController.todos[index].date.day) {
+                      return Container(
+                        alignment: Alignment.center,
+                        height: heightDevice,
+                        width: widthDevice,
+                        child: Text(
+                          'ไม่มีเตือนความจำ',
+                          style: TextStyle(fontSize: 24, color: Colors.grey),
+                        ),
+                      );
+                    }
                   }
                 }
+
                 return Container();
               }))),
     );
