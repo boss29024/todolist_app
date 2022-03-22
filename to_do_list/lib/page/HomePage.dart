@@ -102,7 +102,6 @@ class _HomePageState extends State<HomePage> {
                           child: CardAllSchedule(
                             icon: Icons.today,
                             headcard: 'วันนี้',
-                            score: todoController.todos.length,
                           ),
                           onTap: () {
                             Navigator.pushNamed(context, '/today');
@@ -111,7 +110,6 @@ class _HomePageState extends State<HomePage> {
                         child: CardAllSchedule(
                           icon: Icons.calendar_month,
                           headcard: 'กำหนดเวลา',
-                          score: todoController.todos.length,
                         ),
                         onTap: () {
                           Navigator.pushNamed(context, '/deadline');
@@ -128,16 +126,15 @@ class _HomePageState extends State<HomePage> {
                           child: CardAllSchedule(
                             icon: Icons.inbox,
                             headcard: 'ทั้งหมด',
-                            score: todoController.todos.length,
                           )),
                       InkWell(
                         onTap: (() {
                           Navigator.pushNamed(context, '/complete');
                         }),
                         child: CardAllSchedule(
-                            icon: Icons.check,
-                            headcard: 'ทำเสร็จแล้ว',
-                            score: todoController.todos.length),
+                          icon: Icons.check,
+                          headcard: 'ทำเสร็จแล้ว',
+                        ),
                       ),
                     ],
                   ),
