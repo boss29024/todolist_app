@@ -29,9 +29,6 @@ class CardAllSchedule extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon(icon, color: Colors.blue),
-              SizedBox(
-                height: (heightDevice / 100) * 2,
-              ),
               Text(
                 headcard,
                 style: TextStyle(fontSize: 22),
