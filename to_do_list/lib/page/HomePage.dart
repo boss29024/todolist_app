@@ -135,7 +135,9 @@ class _HomePageState extends State<HomePage> {
                           Navigator.pushNamed(context, '/complete');
                         }),
                         child: CardAllSchedule(
-                            icon: Icons.check, headcard: 'ทำเสร็จแล้ว'),
+                            icon: Icons.check,
+                            headcard: 'ทำเสร็จแล้ว',
+                            score: todoController.todos.length),
                       ),
                     ],
                   ),
