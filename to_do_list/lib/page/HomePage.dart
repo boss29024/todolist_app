@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-enum BottonIcons { Add, List }
+enum BottonIcons { Add }
 
 class _HomePageState extends State<HomePage> {
   BottonIcons bottonIcons = BottonIcons.Add;
