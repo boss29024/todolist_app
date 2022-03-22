@@ -14,10 +14,9 @@ class AllListPage extends StatefulWidget {
 }
 
 class _AllListPageState extends State<AllListPage> {
+  TodoController todoController = Get.find();
   @override
   Widget build(BuildContext context) {
-    TodoController todoController = Get.find();
-
     return Scaffold(
       appBar: AppBar(
         title: Text('ทั้งหมด'),

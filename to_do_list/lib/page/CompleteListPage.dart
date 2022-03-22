@@ -15,12 +15,9 @@ class CompleteListPage extends StatefulWidget {
 
 class _CompleteListPageState extends State<CompleteListPage> {
   bool value = true;
+  TodoController todoController = Get.find();
   @override
   Widget build(BuildContext context) {
-    TodoController todoController = Get.find();
-
-    final heightDevice = MediaQuery.of(context).size.height;
-    final widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text('ทำเสร็จแล้ว'),

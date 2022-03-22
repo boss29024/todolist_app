@@ -14,10 +14,10 @@ class ToDayPage extends StatefulWidget {
 
 class _ToDayPageState extends State<ToDayPage> {
   final nowDate = DateTime.now();
+  TodoController todoController = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    TodoController todoController = Get.find();
     final heightDevice = MediaQuery.of(context).size.height;
     final widthDevice = MediaQuery.of(context).size.width;
     return Scaffold(
