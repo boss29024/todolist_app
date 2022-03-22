@@ -1,8 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../controllers/todo.controller.dart';
 
 class CardAllSchedule extends StatelessWidget {
   CardAllSchedule(
@@ -12,7 +10,6 @@ class CardAllSchedule extends StatelessWidget {
   final String headcard;
   final int score;
   final IconData icon;
-  TodoController todoController = Get.find();
 
   @override
   Widget build(BuildContext context) {
