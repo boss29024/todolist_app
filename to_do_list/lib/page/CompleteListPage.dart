@@ -73,7 +73,7 @@ class _CompleteListPageState extends State<CompleteListPage> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   const Text(
-                                    'เตือนความจำใหม่',
+                                    'แก้ไขเตือนความจำ',
                                     style: TextStyle(fontSize: 24),
                                   ),
                                   EditPage(indexEnit: index),
