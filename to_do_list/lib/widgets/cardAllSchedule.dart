@@ -1,14 +1,14 @@
 // ignore_for_file: file_names
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class CardAllSchedule extends StatelessWidget {
-  CardAllSchedule(
-      {Key? key, this.headcard = '', this.score = 0, this.icon = Icons.error})
+  CardAllSchedule({Key? key, this.headcard = '', this.icon = Icons.error})
       : super(key: key);
 
   final String headcard;
-  final int score;
   final IconData icon;
 
   @override
@@ -28,32 +28,14 @@ class CardAllSchedule extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Expanded(
-                  flex: 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: (heightDevice / 100) * 2,
-                      ),
-                      Icon(icon, color: Colors.blue),
-                      SizedBox(
-                        height: (heightDevice / 100) * 4,
-                      ),
-                      Text(headcard),
-                    ],
-                  )),
-              Expanded(
-                  flex: 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      SizedBox(
-                        height: (heightDevice / 100) * 2,
-                      ),
-                      Text('$score', style: const TextStyle(fontSize: 30)),
-                    ],
-                  )),
+              Icon(icon, color: Colors.blue),
+              SizedBox(
+                height: (heightDevice / 100) * 2,
+              ),
+              Text(
+                headcard,
+                style: TextStyle(fontSize: 22),
+              ),
             ]),
       ),
     );
