@@ -16,17 +16,17 @@ Future<void> main() async {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await GetStorage.init();
 
-  runApp(const App());
+  runApp(const TodoApp());
 }
 
-class App extends StatefulWidget {
-  const App({Key? key}) : super(key: key);
+class TodoApp extends StatefulWidget {
+  const TodoApp({Key? key}) : super(key: key);
 
   @override
-  State<App> createState() => _AppState();
+  State<TodoApp> createState() => _TodoAppState();
 }
 
-class _AppState extends State<App> {
+class _TodoAppState extends State<TodoApp> {
   final todoController = Get.put(TodoController(), permanent: true);
 
   @override
